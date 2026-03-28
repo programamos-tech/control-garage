@@ -11,7 +11,7 @@ export function AboutSection({ dict, locale }: Props) {
   return (
     <section
       id="about"
-      className="scroll-mt-24 bg-white pb-8 pt-8 sm:pb-12 sm:pt-12"
+      className="relative z-0 scroll-mt-24 bg-white pb-8 pt-20 sm:pb-12 sm:pt-24 md:pt-28"
       aria-labelledby="about-title"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
