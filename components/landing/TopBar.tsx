@@ -6,19 +6,18 @@ import { SiteLogo } from "./SiteLogo";
 
 type Props = { dict: Dictionary; locale: Locale };
 
+const goldClip = "[clip-path:polygon(0_0,100%_0,80%_100%,0_100%)]";
+
 export function TopBar({ dict, locale }: Props) {
   return (
-    <div className="relative z-50 bg-brand-blue text-white">
-      <div className="relative flex min-h-[3.5rem] items-stretch overflow-hidden sm:min-h-[4rem] xl:min-h-[4.5rem]">
+    <div className="relative z-50 hidden bg-brand-blue text-white lg:block">
+      <div className="flex min-h-[4rem] items-stretch xl:min-h-[4.5rem]">
         <div
-          className="relative flex w-[min(100%,200px)] shrink-0 items-center gap-2 bg-brand-gold pl-3 pr-4 text-brand-blue sm:w-[18%] sm:min-w-[132px] sm:max-w-[200px] sm:pl-3.5 sm:pr-4 md:max-w-[220px] xl:w-[20%] xl:min-w-[160px] xl:max-w-[240px] xl:pl-4 xl:pr-5"
-          style={{
-            clipPath: "polygon(0 0, 100% 0, 80% 100%, 0 100%)",
-          }}
+          className={`relative flex w-[min(100%,200px)] shrink-0 items-center justify-start gap-2 bg-brand-gold py-1 pl-3 pr-4 text-brand-blue sm:min-w-[132px] sm:max-w-[200px] md:max-w-[220px] xl:w-[20%] xl:min-w-[160px] xl:max-w-[240px] xl:pl-4 xl:pr-5 ${goldClip}`}
         >
           <a
             href={`#top`}
-            className="flex min-w-0 items-center py-1 font-bold focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/40 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-gold"
+            className="flex min-w-0 items-center py-0.5 font-bold focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/40 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-gold"
           >
             <SiteLogo
               size="top"
@@ -64,7 +63,7 @@ export function TopBar({ dict, locale }: Props) {
               href={whatsappHref()}
               external
               size="compact"
-              className="max-[639px]:w-full max-[639px]:justify-center sm:max-xl:shrink-0"
+              className="shrink-0 sm:max-xl:shrink-0"
             >
               {dict.topBar.cta}
             </ButtonCta>

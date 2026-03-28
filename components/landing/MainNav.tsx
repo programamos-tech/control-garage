@@ -1,62 +1,23 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
 import type { Dictionary, Locale } from "@/lib/dictionaries";
+import { getMainNavLinks } from "@/lib/nav-links";
 
 type Props = { dict: Dictionary; locale: Locale };
 
 export function MainNav({ dict, locale }: Props) {
-  const [open, setOpen] = useState(false);
-  const prefix = `/${locale}`;
-
-  const links: { href: string; label: string; sub?: { href: string; label: string }[] }[] = [
-    { href: `${prefix}#top`, label: dict.nav.home },
-    { href: `${prefix}#about`, label: dict.nav.about },
-    {
-      href: `${prefix}#services`,
-      label: dict.nav.services,
-      sub: [
-        { href: `${prefix}#installation`, label: dict.services.items[0].title },
-        { href: `${prefix}#repair`, label: dict.services.items[1].title },
-        { href: `${prefix}#opener`, label: dict.services.items[2].title },
-      ],
-    },
-    { href: `${prefix}#reviews`, label: dict.nav.reviews },
-    { href: `${prefix}#work`, label: dict.nav.work },
-    { href: `${prefix}#why`, label: dict.nav.why },
-    { href: `${prefix}#faq`, label: dict.nav.faq },
-    { href: `${prefix}#contact`, label: dict.nav.contact },
-  ];
+  const links = getMainNavLinks(dict, locale);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white shadow-sm">
+    <header className="sticky top-0 z-40 hidden border-b border-slate-200/90 bg-white/95 shadow-[0_1px_0_rgba(12,39,72,0.04)] backdrop-blur-md supports-[backdrop-filter]:bg-white/80 lg:block">
       <nav
-        className="mx-auto grid w-full max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-3 px-4 py-2 lg:grid-cols-[1fr_auto_1fr] lg:gap-6 lg:px-8 lg:py-3"
+        className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-3 lg:px-8"
         aria-label="Main"
       >
-        <div className="flex justify-start">
-          <button
-            type="button"
-            className="inline-flex shrink-0 items-center justify-center rounded-lg border border-slate-200 p-2 text-brand-blue lg:hidden"
-            onClick={() => setOpen((v) => !v)}
-            aria-expanded={open}
-            aria-controls="mobile-nav"
-          >
-            <span className="sr-only">Menu</span>
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              {open ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
-        </div>
+        <div className="min-w-[4.5rem] flex-1" aria-hidden />
 
-        <ul className="hidden flex-wrap items-center justify-center gap-1 justify-self-center lg:flex lg:gap-2">
+        <ul className="flex max-w-[min(100%,52rem)] flex-wrap items-center justify-center gap-1 lg:gap-2">
           {links.map((l) => (
-            <li key={l.label} className="relative group">
+            <li key={l.label} className="group relative">
               <Link
                 href={l.href}
                 className="flex items-center gap-1 px-2 py-2 text-sm font-bold text-brand-blue hover:text-brand-gold-dark"
@@ -86,57 +47,26 @@ export function MainNav({ dict, locale }: Props) {
           ))}
         </ul>
 
-        <div className="flex items-center justify-end gap-2">
+        <div className="flex min-w-[4.5rem] flex-1 items-center justify-end gap-1.5">
           <Link
             href="/en"
-            className={`text-xs font-bold ${locale === "en" ? "text-brand-gold-dark" : "text-slate-400"}`}
+            className={`rounded-md px-2 py-1 text-xs font-bold transition hover:bg-slate-100 ${locale === "en" ? "text-brand-gold-dark" : "text-slate-400"}`}
             hrefLang="en"
           >
             EN
           </Link>
-          <span className="text-slate-300">|</span>
+          <span className="text-slate-200" aria-hidden>
+            |
+          </span>
           <Link
             href="/es"
-            className={`text-xs font-bold ${locale === "es" ? "text-brand-gold-dark" : "text-slate-400"}`}
+            className={`rounded-md px-2 py-1 text-xs font-bold transition hover:bg-slate-100 ${locale === "es" ? "text-brand-gold-dark" : "text-slate-400"}`}
             hrefLang="es"
           >
             ES
           </Link>
         </div>
       </nav>
-
-      {open && (
-        <div id="mobile-nav" className="border-t border-slate-100 bg-white px-4 pb-4 lg:hidden">
-          <ul className="flex flex-col gap-1 pt-2">
-            {links.map((l) => (
-              <li key={l.label}>
-                <Link
-                  href={l.href}
-                  className="block py-2 font-bold text-brand-blue"
-                  onClick={() => setOpen(false)}
-                >
-                  {l.label}
-                </Link>
-                {l.sub && (
-                  <ul className="ml-3 border-l-2 border-brand-gold/40 pl-3">
-                    {l.sub.map((s) => (
-                      <li key={s.href}>
-                        <Link
-                          href={s.href}
-                          className="block py-1.5 text-sm text-slate-700"
-                          onClick={() => setOpen(false)}
-                        >
-                          {s.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
     </header>
   );
 }

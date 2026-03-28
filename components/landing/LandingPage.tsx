@@ -1,5 +1,6 @@
 import type { Dictionary, Locale } from "@/lib/dictionaries";
 import { JsonLd } from "./JsonLd";
+import { MobileSiteHeader } from "./MobileSiteHeader";
 import { TopBar } from "./TopBar";
 import { MainNav } from "./MainNav";
 import { Hero } from "./Hero";
@@ -20,6 +21,7 @@ export function LandingPage({ locale, dict }: Props) {
     <>
       <JsonLd locale={locale} dict={dict} />
       <div id="top" className="flex min-h-screen flex-col">
+        <MobileSiteHeader dict={dict} locale={locale} />
         <TopBar dict={dict} locale={locale} />
         <MainNav dict={dict} locale={locale} />
         <main className="flex-1">
