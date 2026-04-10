@@ -1,13 +1,26 @@
-import Link from "next/link";
+import Image from "next/image";
 import type { Dictionary, Locale } from "@/lib/dictionaries";
+import { whatsappHref } from "@/lib/site-config";
 
 const IDS = ["installation", "repair", "opener"] as const;
+
+/** Imágenes de referencia en `public/` por servicio (instalación · reparación · motor). */
+const SERVICE_IMAGES = [
+  "/male-with-red-shirt-making-window-with-industrial-tools.jpg",
+  "/low-angle-people-working-with-drill.jpg",
+  "/electrician-is-mounting-electric-sockets-white-wall-indoors.jpg",
+] as const;
+
+function waMessageForService(locale: Locale, serviceTitle: string) {
+  if (locale === "es") {
+    return `Hola CONTROL GARAGE FL — quiero información sobre: ${serviceTitle}`;
+  }
+  return `Hi CONTROL GARAGE FL — I'd like info about: ${serviceTitle}`;
+}
 
 type Props = { dict: Dictionary; locale: Locale };
 
 export function ServicesSection({ dict, locale }: Props) {
-  const prefix = `/${locale}`;
-
   return (
     <section
       id="services"
@@ -26,16 +39,34 @@ export function ServicesSection({ dict, locale }: Props) {
             <article
               key={item.title}
               id={IDS[i]}
-              className="scroll-mt-28 rounded-2xl border border-slate-200/80 bg-white p-8 shadow-sm"
+              className="flex scroll-mt-28 flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm ring-1 ring-slate-100"
             >
-              <h3 className="text-xl font-bold text-brand-blue">{item.title}</h3>
-              <p className="mt-4 text-sm leading-relaxed text-slate-600">{item.body}</p>
-              <Link
-                href={`${prefix}#contact`}
-                className="mt-6 inline-flex text-sm font-bold uppercase tracking-wide text-brand-gold-dark hover:underline"
-              >
-                {item.learn}
-              </Link>
+              <div className="relative aspect-[16/11] w-full shrink-0 bg-slate-200">
+                <Image
+                  src={SERVICE_IMAGES[i] ?? SERVICE_IMAGES[0]}
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width:768px) 100vw, 33vw"
+                />
+              </div>
+              <div className="flex flex-1 flex-col p-6 sm:p-8">
+                <h3 className="text-xl font-bold text-brand-blue">{item.title}</h3>
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-slate-600">{item.body}</p>
+                <div className="mt-8 flex w-full justify-center">
+                  <a
+                    href={whatsappHref(
+                      waMessageForService(locale, item.title),
+                      dict.contact.whatsappLeadPrefix,
+                    )}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex max-w-full items-center justify-center rounded-full bg-brand-blue px-5 py-3 text-center text-sm font-bold uppercase tracking-wide text-white shadow-md transition hover:brightness-110 active:brightness-95"
+                  >
+                    {item.cta}
+                  </a>
+                </div>
+              </div>
             </article>
           ))}
         </div>

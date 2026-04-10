@@ -18,9 +18,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const dict = getDictionary(loc);
   const base = getSiteUrl();
 
+  const keywords =
+    loc === "es"
+      ? [
+          "instalación puerta de garaje Orlando",
+          "reemplazo puerta de garaje Orlando",
+          "reparación garaje Orlando",
+          "motor garaje Orlando",
+          "CONTROL GARAGE FL",
+        ]
+      : [
+          "garage door installation Orlando",
+          "garage door replacement Orlando",
+          "garage door repair Orlando",
+          "garage door opener Orlando",
+          "CONTROL GARAGE FL",
+        ];
+
   return {
     title: dict.meta.title,
     description: dict.meta.description,
+    keywords,
     alternates: {
       canonical: loc === "en" ? `${base}/en` : `${base}/es`,
       languages: {
@@ -34,14 +52,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       locale: loc === "es" ? "es_US" : "en_US",
       alternateLocale: loc === "es" ? ["en_US"] : ["es_US"],
       url: loc === "en" ? `${base}/en` : `${base}/es`,
-      siteName: "Control Garage",
+      siteName: "CONTROL GARAGE FL",
       title: dict.meta.ogTitle,
       description: dict.meta.description,
+      images: [
+        {
+          url: "/logo_transparent.png",
+          width: 512,
+          height: 512,
+          alt: "CONTROL GARAGE FL logo",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: dict.meta.ogTitle,
       description: dict.meta.description,
+      images: ["/logo_transparent.png"],
     },
     robots: {
       index: true,

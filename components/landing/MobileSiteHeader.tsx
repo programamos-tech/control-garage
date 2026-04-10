@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import type { Dictionary, Locale } from "@/lib/dictionaries";
+import { capitalizeFirstLetter } from "@/lib/capitalize-first-letter";
 import { getMainNavLinks } from "@/lib/nav-links";
 import { SITE, whatsappHref } from "@/lib/site-config";
 import { ButtonCta } from "./ButtonCta";
@@ -11,8 +12,7 @@ import { SiteLogo } from "./SiteLogo";
 
 type Props = { dict: Dictionary; locale: Locale };
 
-const goldClip =
-  "[clip-path:polygon(0_0,100%_0,78%_100%,0_100%)]";
+const goldClip = "[clip-path:polygon(0_0,100%_0,92%_100%,0_100%)]";
 
 export function MobileSiteHeader({ dict, locale }: Props) {
   const [open, setOpen] = useState(false);
@@ -24,21 +24,25 @@ export function MobileSiteHeader({ dict, locale }: Props) {
   return (
     <header className="sticky top-0 z-50 lg:hidden">
       {/* Franja 1: marca + menú (estilo referencia 1A) */}
-      <div className="flex min-h-[3.25rem] items-stretch overflow-hidden bg-brand-blue shadow-[0_1px_0_rgba(255,255,255,0.06)]">
+      <div className="flex min-h-[4rem] items-stretch overflow-hidden bg-brand-blue shadow-[0_1px_0_rgba(255,255,255,0.06)] sm:min-h-[4.25rem]">
         <a
           href="#top"
-          className={`relative flex w-[min(46vw,11rem)] max-w-[200px] shrink-0 items-center justify-center bg-brand-gold py-2 pl-3 pr-2 text-brand-blue sm:w-[min(40vw,12rem)] ${goldClip}`}
+          className={`relative flex w-[min(54vw,16.5rem)] max-w-[280px] shrink-0 items-center justify-center bg-brand-gold-mid px-3 py-2.5 sm:w-[min(48vw,18rem)] sm:py-3 ${goldClip} focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40`}
         >
           <SiteLogo
             size="nav"
             priority
-            className="!h-9 !max-h-9 max-w-[min(130px,38vw)] sm:!h-10 sm:!max-h-10"
+            onGold
+            className="!h-12 !max-h-12 max-w-[min(200px,50vw)] sm:!h-14 sm:!max-h-14 sm:max-w-[min(220px,46vw)]"
           />
         </a>
-        <div className="flex min-w-0 flex-1 items-center justify-end gap-2 pr-3 sm:pr-4">
+        <div className="flex min-w-0 flex-1 items-center justify-end gap-1.5 pr-2 sm:gap-2 sm:pr-3">
+          <div className="shrink-0">
+            <LanguageSwitcher locale={locale} size="navBar" />
+          </div>
           <button
             type="button"
-            className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-white transition hover:bg-white/10 active:bg-white/15"
+            className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-lg text-white transition hover:bg-white/10 active:bg-white/15 sm:h-[3.25rem] sm:w-[3.25rem]"
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-controls="mobile-site-nav"
@@ -56,11 +60,11 @@ export function MobileSiteHeader({ dict, locale }: Props) {
       </div>
 
       {/* Franja 2: blanca, poco texto + teléfono + CTA */}
-      <div className="border-b border-slate-200/90 bg-white px-4 py-2.5 shadow-sm sm:px-5 sm:py-3">
+      <div className="border-b border-slate-200/90 bg-white px-4 py-3 shadow-sm sm:px-5 sm:py-4">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-3">
           <div className="min-w-0 flex-1">
-            <p className="text-[11px] font-medium leading-tight text-slate-500 line-clamp-2 sm:text-xs sm:line-clamp-1">
-              {dict.topBar.rated}
+            <p className="line-clamp-1 text-[11px] font-medium leading-tight text-slate-500 sm:text-xs">
+              {capitalizeFirstLetter(dict.topBar.rated)}
             </p>
             <a
               href={`tel:${primary.tel.replace(/\s/g, "")}`}
@@ -76,9 +80,10 @@ export function MobileSiteHeader({ dict, locale }: Props) {
             </a>
           </div>
           <ButtonCta
-            href={whatsappHref()}
+            href={whatsappHref(undefined, dict.contact.whatsappLeadPrefix)}
             external
             size="compact"
+            variant="solid"
             className="max-w-[min(11rem,42vw)] shrink-0 scale-95 py-2 text-[9px] sm:max-w-none sm:scale-100 sm:text-[10px]"
           >
             {dict.topBar.cta}
@@ -102,7 +107,7 @@ export function MobileSiteHeader({ dict, locale }: Props) {
                   {l.label}
                 </Link>
                 {l.sub && (
-                  <ul className="ml-3 border-l-2 border-brand-gold/35 pl-3">
+                  <ul className="ml-3 border-l-2 border-brand-gold-mid/40 pl-3">
                     {l.sub.map((s) => (
                       <li key={s.href}>
                         <Link
@@ -119,12 +124,6 @@ export function MobileSiteHeader({ dict, locale }: Props) {
               </li>
             ))}
           </ul>
-          <div className="mt-5 border-t border-slate-100 pt-4">
-            <p className="mb-2 text-[10px] font-semibold uppercase tracking-wider text-slate-400">
-              {locale === "es" ? "Idioma" : "Language"}
-            </p>
-            <LanguageSwitcher locale={locale} dense onLight />
-          </div>
         </div>
       )}
     </header>

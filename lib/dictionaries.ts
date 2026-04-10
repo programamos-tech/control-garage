@@ -10,66 +10,81 @@ export type Dictionary = {
     services: string;
     reviews: string;
     work: string;
-    why: string;
     faq: string;
     contact: string;
     offers: string;
+  };
+  about: {
+    body: string;
   };
   hero: {
     h1: string;
     sub: string;
     cta: string;
-    ratingLine: string;
+    /** Tarjeta estática tipo Google Maps (sin API) */
+    googleMapsCategory: string;
+    googleMapsLinkAria: string;
+    /** Tarjeta estática tipo reseñas Facebook (sin API) */
+    facebookMapsCategory: string;
+    facebookMapsLinkAria: string;
+    facebookRatingDisplay: string;
+    facebookReviewCount: string;
   };
   services: {
     title: string;
-    items: { title: string; body: string; learn: string }[];
+    items: { title: string; body: string; cta: string }[];
   };
   brands: {
     title: string;
     sub: string;
-    suppliersTitle: string;
-    suppliersBody: string;
-    haas: string;
-    liftmasterOpeners: string;
+    /** Subtítulo del carrusel de motores / openers */
+    motorsTitle: string;
+    motorsCarouselPrev: string;
+    motorsCarouselNext: string;
+    /** Alt de cada foto; usar "{n}" para el número (1, 2, …) */
+    motorSlideAlt: string;
   };
   reviews: {
     title: string;
     sub: string;
-    google: string;
-    facebook: string;
   };
   work: { title: string; sub: string };
-  why: { title: string; items: string[] };
+  /** Banda “servicio móvil” con foto de camioneta */
+  mobileService: { title: string; sub: string; imageAlt: string; cta: string };
   faq: { title: string; items: { q: string; a: string }[] };
   contact: {
-    title: string;
-    sub: string;
-    callEn: string;
-    callEs: string;
-    whatsapp: string;
-    directions: string;
+    /** Solo lectores de pantalla — sección #contact */
+    sectionTitle: string;
+    /** Párrafo bajo el mapa (área de servicio en millas) */
+    serviceAreaNote: string;
+    /** Botón flotante WhatsApp (fixed) */
+    whatsappFabAria: string;
+    /** Primera línea del mensaje prefijado en enlaces wa.me (procedencia web/tienda) */
+    whatsappLeadPrefix: string;
   };
   footer: {
     rights: string;
     privacy: string;
-    areas: string;
+    contactHeading: string;
+    /** Una línea bajo contacto (área de servicio, sin mapa) */
+    addressLine: string;
+    columnServices: string;
+    whyUsHeading: string;
+    whyUsItems: string[];
   };
 };
 
 export const dictionaries: Record<Locale, Dictionary> = {
   en: {
     meta: {
-      title:
-        "Orlando Garage Door Repair & Install | Free Estimate | Control Garage",
+      title: "Garage Door Install & Replacement Orlando | CONTROL GARAGE FL",
       description:
-        "Need garage door repair or a new door in Orlando? Free estimate, same-day help, 24/7 emergencies. Openers, springs, off-track fixes. English & Spanish — call (407) 487-0553 or +1 (407) 486-4303.",
-      ogTitle:
-        "Control Garage Orlando — Garage Door Repair & Install | Free Estimate",
+        "Garage door installation & replacement in Orlando, FL. Free estimate, new doors & openers, repairs, 24/7 emergencies. English & Spanish — (407) 487-0553 · (407) 486-4303.",
+      ogTitle: "CONTROL GARAGE FL — Install & replace garage doors | Orlando",
     },
     topBar: {
-      rated: "#1 trusted garage door team serving Orlando, FL — 24/7",
-      callToday: "Call us today!",
+      rated: "#1 Trusted garage door team serving Orlando, FL — 24/7",
+      callToday: "Call now",
       cta: "Get a quick estimate",
     },
     nav: {
@@ -78,18 +93,26 @@ export const dictionaries: Record<Locale, Dictionary> = {
       services: "Services",
       reviews: "Reviews",
       work: "Our work",
-      why: "Why us",
       faq: "FAQ",
       contact: "Contact",
       offers: "Offers",
     },
+    about: {
+      body:
+        "Garage door repair, installs, and openers in Greater Orlando. English & Spanish — LiftMaster, Clopay & CHI.",
+    },
     hero: {
-      h1: "Orlando garage door installation, replacement & repair",
+      h1: "Orlando garage door installation, replacement\n& repair",
       sub:
         "Trust Control Garage for fast, professional repairs, new doors, and openers across Orlando — broken springs, off-track doors, noisy openers, and same-day help when you need it most.",
       cta: "Explore services",
-      ratingLine:
-        "See verified reviews on Google and Facebook from Orlando homeowners.",
+      googleMapsCategory: "Garage door supplier",
+      googleMapsLinkAria:
+        "Open Control Garage on Google Maps — 4.5 stars, 13 reviews",
+      facebookMapsCategory: "Garage door supplier · Facebook",
+      facebookMapsLinkAria: "Open Control Garage reviews on Facebook",
+      facebookRatingDisplay: "5.0",
+      facebookReviewCount: "(Reviews)",
     },
     services: {
       title: "Featured services",
@@ -98,19 +121,19 @@ export const dictionaries: Record<Locale, Dictionary> = {
           title: "Garage door installation",
           body:
             "New garage doors installed with clean, safe hardware and options that match your home — perfect when you are upgrading curb appeal or replacing a damaged panel system.",
-          learn: "Learn more",
+          cta: "Free installation quote",
         },
         {
           title: "Garage door repair",
           body:
             "Fix broken garage doors in Orlando: springs, cables, rollers, sensors, and openers — we diagnose the real problem and repair it right the first time.",
-          learn: "Learn more",
+          cta: "Book a repair visit",
         },
         {
           title: "Opener repair & replacement",
           body:
             "Garage door opener repair and replacement with trusted operators, remotes, and smart-home features — including LiftMaster solutions we install and service.",
-          learn: "Learn more",
+          cta: "Opener repair or upgrade",
         },
       ],
     },
@@ -118,33 +141,28 @@ export const dictionaries: Record<Locale, Dictionary> = {
       title: "Premium doors & openers we install",
       sub:
         "We install and service major garage door and opener brands, and we are happy to show you door styles and opener features before you decide.",
-      suppliersTitle: "Our supplier partners",
-      suppliersBody:
-        "We source quality doors and openers from industry-leading manufacturers.",
-      haas: "Haas Door — residential & commercial doors",
-      liftmasterOpeners: "LiftMaster — garage door openers for homes",
+      motorsTitle: "Openers we install & service",
+      motorsCarouselPrev: "Previous openers",
+      motorsCarouselNext: "Next openers",
+      motorSlideAlt: "Garage door opener — reference photo {n}",
     },
     reviews: {
       title: "Reviews on Google & Facebook",
       sub:
         "Local homeowners rate our punctuality, honest pricing, and clean installs. Read recent feedback before you call.",
-      google: "Open Google reviews",
-      facebook: "Open Facebook page",
     },
     work: {
       title: "See our recent work",
       sub:
-        "A quick look at installs and repairs we have completed across Orlando — tap a photo to open the gallery (place your project photos in /public/gallery).",
+        "A quick look at installs and repairs we have completed for homeowners across Orlando — tap a photo to view it full size.",
     },
-    why: {
-      title: "Why choose Control Garage?",
-      items: [
-        "24/7 availability for urgent garage door problems in Orlando",
-        "English and Spanish speaking team — clear communication every step",
-        "Licensed, insured professionals focused on safety and code-ready installs",
-        "Honest recommendations: repair when it makes sense, replace when it does not",
-        "Trusted brands: LiftMaster, Clopay, and CHI doors and hardware",
-      ],
+    mobileService: {
+      title: "We roll up to your driveway",
+      sub:
+        "Our stocked service van covers Greater Orlando — fast diagnostics and same-day help when you need it.",
+      imageAlt:
+        "Control Garage mobile service van — garage door repair and installation in Orlando, FL",
+      cta: "Contact now!",
     },
     faq: {
       title: "Garage door repair & installation FAQ (Orlando)",
@@ -163,7 +181,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
         {
           q: "Do you speak Spanish?",
-          a: "Yes. Call +1 (407) 486-4303 for Spanish, or (407) 487-0553 for English. You can also message us on WhatsApp for fast scheduling.",
+          a: "Yes. Call (407) 486-4303 for Spanish, or (407) 487-0553 for English. You can also message us on WhatsApp for fast scheduling.",
         },
         {
           q: "What areas near Orlando do you serve?",
@@ -172,33 +190,38 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ],
     },
     contact: {
-      title: "Call, text, or WhatsApp",
-      sub:
-        "Reach us directly for a free estimate on repair or a new door. Save both numbers for English and Spanish support.",
-      callEn: "English",
-      callEs: "Español",
-      whatsapp: "Message on WhatsApp",
-      directions: "Open directions in Google Maps",
+      sectionTitle: "Contact",
+      serviceAreaNote:
+        "This map shows the greater Orlando area where we provide mobile garage door service. We typically work within about 15 miles of our base. If you are not sure whether your address is in range, call us — we are happy to check coverage.",
+      whatsappFabAria: "Message us on WhatsApp — opens in a new tab",
+      whatsappLeadPrefix: "Hi! I'm messaging from the Control Garage website.",
     },
     footer: {
       rights: "All rights reserved.",
-      privacy: "Privacy",
-      areas: "Serving Orlando, FL and surrounding areas.",
+      privacy: "Privacy policy available on request.",
+      contactHeading: "Contact",
+      addressLine: "Mobile service throughout Greater Orlando.",
+      columnServices: "Services",
+      whyUsHeading: "Why us",
+      whyUsItems: [
+        "Local mobile service — Greater Orlando",
+        "English & Spanish, same-day when you need it",
+        "Clear estimates — LiftMaster, Clopay & CHI",
+        "24/7 availability for urgent garage door issues",
+      ],
     },
   },
   es: {
     meta: {
-      title:
-        "Reparación de garaje Orlando | Cotización gratis | Control Garage",
+      title: "Instalación y reemplazo de puertas de garaje Orlando | CONTROL GARAGE FL",
       description:
-        "¿Puerta de garaje dañada en Orlando? Cotización sin costo, servicio el mismo día y emergencias 24h. Motores, resortes, rieles. Inglés y español: +1 (407) 486-4303 o (407) 487-0553.",
-      ogTitle:
-        "Control Garage Orlando — Reparación e instalación | Cotización gratis",
+        "Instalación y reemplazo de puertas de garaje en Orlando, FL. Cotización gratis, puertas y motores nuevos, reparación y emergencias 24h. Español e inglés — (407) 486-4303 · (407) 487-0553.",
+      ogTitle: "CONTROL GARAGE FL — Instalar y reemplazar puertas de garaje | Orlando",
     },
     topBar: {
       rated:
         "Equipo de confianza en puertas de garaje para Orlando, FL — 24/7",
-      callToday: "¡Llámenos hoy!",
+      callToday: "Llama ahora",
       cta: "Cotización rápida",
     },
     nav: {
@@ -207,18 +230,26 @@ export const dictionaries: Record<Locale, Dictionary> = {
       services: "Servicios",
       reviews: "Reseñas",
       work: "Trabajos",
-      why: "Por qué nosotros",
       faq: "Preguntas",
       contact: "Contacto",
       offers: "Ofertas",
+    },
+    about: {
+      body:
+        "Reparación, instalación y motores en Orlando y alrededores. Inglés y español — LiftMaster, Clopay y CHI.",
     },
     hero: {
       h1: "Instalación, reemplazo y reparación de puertas de garaje en Orlando",
       sub:
         "Confíe en Control Garage para reparaciones rápidas, puertas nuevas y motores en Orlando — resortes rotos, puertas fuera de riel, motores ruidosos y ayuda el mismo día cuando más lo necesita.",
       cta: "Ver servicios",
-      ratingLine:
-        "Vea reseñas verificadas en Google y Facebook de propietarios en Orlando.",
+      googleMapsCategory: "Proveedor de puertas de garaje",
+      googleMapsLinkAria:
+        "Abrir Control Garage en Google Maps — 4,5 estrellas, 13 reseñas",
+      facebookMapsCategory: "Proveedor de puertas de garaje · Facebook",
+      facebookMapsLinkAria: "Abrir las reseñas de Control Garage en Facebook",
+      facebookRatingDisplay: "5,0",
+      facebookReviewCount: "(Reseñas)",
     },
     services: {
       title: "Servicios destacados",
@@ -227,19 +258,19 @@ export const dictionaries: Record<Locale, Dictionary> = {
           title: "Instalación de puertas de garaje",
           body:
             "Instalamos puertas nuevas con herrajes seguros y acabados que combinan con su casa — ideal para renovar fachada o cambiar un sistema dañado.",
-          learn: "Más información",
+          cta: "Cotización de instalación",
         },
         {
           title: "Reparación de puertas de garaje",
           body:
             "Arreglamos puertas dañadas en Orlando: resortes, cables, ruedas, sensores y motores — diagnosticamos la causa real y la corregimos bien a la primera.",
-          learn: "Más información",
+          cta: "Agendar visita de reparación",
         },
         {
           title: "Reparación y cambio de motor",
           body:
             "Reparamos y reemplazamos motores con controles y opciones inteligentes — incluido LiftMaster, que instalamos y damos servicio.",
-          learn: "Más información",
+          cta: "Motor: reparar o cambiar",
         },
       ],
     },
@@ -247,33 +278,28 @@ export const dictionaries: Record<Locale, Dictionary> = {
       title: "Puertas y motores de calidad que instalamos",
       sub:
         "Instalamos y damos servicio a marcas líderes; le mostramos estilos de puerta y funciones del motor antes de decidir.",
-      suppliersTitle: "Proveedores",
-      suppliersBody:
-        "Trabajamos con fabricantes reconocidos del sector para puertas y motores.",
-      haas: "Haas Door — puertas residenciales y comerciales",
-      liftmasterOpeners: "LiftMaster — motores para garaje residencial",
+      motorsTitle: "Motores que instalamos y damos servicio",
+      motorsCarouselPrev: "Motores anteriores",
+      motorsCarouselNext: "Siguientes motores",
+      motorSlideAlt: "Motor para puerta de garaje — foto de referencia {n}",
     },
     reviews: {
       title: "Reseñas en Google y Facebook",
       sub:
         "Vecinos en Orlando destacan puntualidad, precios claros e instalaciones limpias. Lea opiniones antes de llamar.",
-      google: "Ver reseñas en Google",
-      facebook: "Abrir página de Facebook",
     },
     work: {
       title: "Conozca nuestros trabajos",
       sub:
-        "Muestra de instalaciones y reparaciones en Orlando — coloque sus fotos en /public/gallery.",
+        "Algunas instalaciones y reparaciones que hemos realizado en Orlando — pulse una foto para verla en grande.",
     },
-    why: {
-      title: "¿Por qué elegir Control Garage?",
-      items: [
-        "Disponibilidad 24/7 para urgencias de garaje en Orlando",
-        "Equipo en inglés y español — comunicación clara en cada paso",
-        "Profesionales con seguro, enfoque en seguridad e instalaciones correctas",
-        "Recomendaciones honestas: reparar cuando conviene, cambiar cuando no",
-        "Marcas de confianza: LiftMaster, Clopay y CHI",
-      ],
+    mobileService: {
+      title: "Llegamos a su garaje",
+      sub:
+        "Camioneta equipada en Orlando y alrededores — diagnóstico rápido y ayuda el mismo día.",
+      imageAlt:
+        "Camioneta de servicio Control Garage — reparación e instalación de puertas de garaje en Orlando, FL",
+      cta: "¡Contáctenos ya!",
     },
     faq: {
       title: "Preguntas frecuentes — garaje en Orlando",
@@ -292,7 +318,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
         {
           q: "¿Hablan español?",
-          a: "Sí. +1 (407) 486-4303 para español y (407) 487-0553 para inglés. También puede escribirnos por WhatsApp para agendar rápido.",
+          a: "Sí. (407) 486-4303 para español y (407) 487-0553 para inglés. También puede escribirnos por WhatsApp para agendar rápido.",
         },
         {
           q: "¿A qué zonas cerca de Orlando llegan?",
@@ -301,18 +327,25 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ],
     },
     contact: {
-      title: "Llame, mensaje o WhatsApp",
-      sub:
-        "Contáctenos para estimado gratis en reparación o puerta nueva. Guarde ambos números para inglés y español.",
-      callEn: "Inglés",
-      callEs: "Español",
-      whatsapp: "Escribir por WhatsApp",
-      directions: "Abrir dirección en Google Maps",
+      sectionTitle: "Contacto",
+      serviceAreaNote:
+        "Este mapa muestra la zona amplia de Orlando donde ofrecemos servicio móvil de puertas de garaje. Suelen atender en un radio aproximado de 15 millas desde nuestra base. Si no está seguro de si su dirección queda cubierta, llámenos — con gusto le confirmamos.",
+      whatsappFabAria: "Escríbanos por WhatsApp — se abre en una pestaña nueva",
+      whatsappLeadPrefix: "Hola, les escribo desde la tienda en línea de Control Garage.",
     },
     footer: {
       rights: "Todos los derechos reservados.",
-      privacy: "Privacidad",
-      areas: "Servicio en Orlando, FL y alrededores.",
+      privacy: "Política de privacidad disponible bajo solicitud.",
+      contactHeading: "Contacto",
+      addressLine: "Servicio móvil en Orlando y alrededores.",
+      columnServices: "Servicios",
+      whyUsHeading: "Por qué nosotros",
+      whyUsItems: [
+        "Servicio móvil local — Orlando y alrededores",
+        "Inglés y español, ayuda el mismo día",
+        "Cotizaciones claras — LiftMaster, Clopay y CHI",
+        "Disponibilidad 24/7 para urgencias de garaje",
+      ],
     },
   },
 };

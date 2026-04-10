@@ -8,8 +8,10 @@
     "start": "next start",
     "lint": "eslint",
     "logo:transparent": "node scripts/make-logo-transparent-png.cjs",
+    "logo:transparent-bg": "node scripts/logo-transparent-dark-bg.cjs",
     "logo:recolor": "node scripts/recolor-logo-brand.cjs",
-    "logo:build": "node scripts/make-logo-transparent-png.cjs && node scripts/recolor-logo-brand.cjs"
+    "logo:build": "node scripts/make-logo-transparent-png.cjs && node scripts/recolor-logo-brand.cjs",
+    "favicon:build": "node scripts/build-favicon.cjs"
   },
   "dependencies": {
     "next": "16.2.1",
@@ -23,6 +25,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.1",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

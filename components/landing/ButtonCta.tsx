@@ -7,6 +7,8 @@ type Props = {
   external?: boolean;
   /** Barra superior u otros espacios estrechos */
   size?: "default" | "compact";
+  /** `solid` = un solo tono (más limpio en cabeceras); `gradient` = marca clásica */
+  variant?: "gradient" | "solid";
 };
 
 export function ButtonCta({
@@ -15,13 +17,18 @@ export function ButtonCta({
   className = "",
   external,
   size = "default",
+  variant = "gradient",
 }: Props) {
   const isCompact = size === "compact";
+  const bgClass =
+    variant === "solid"
+      ? "bg-brand-gold-mid shadow-sm transition hover:brightness-[1.05] active:brightness-[0.98]"
+      : "bg-brand-gold-gradient shadow-md transition hover:brightness-[1.06] active:brightness-[0.97]";
 
   return (
     <a
       href={href}
-      className={`inline-flex items-center rounded-full bg-brand-gold font-bold uppercase tracking-wide text-brand-blue shadow-md transition hover:bg-brand-gold-light ${
+      className={`inline-flex items-center rounded-full font-bold uppercase tracking-wide text-brand-blue ${bgClass} ${
         isCompact
           ? "gap-2 px-3 py-2 text-[10px] leading-tight sm:px-3.5 sm:text-[11px]"
           : "gap-3 px-5 py-3 text-sm"
@@ -30,7 +37,7 @@ export function ButtonCta({
     >
       <span>{children}</span>
       <span
-        className={`flex shrink-0 items-center justify-center rounded-full bg-brand-blue text-white ${
+        className={`flex shrink-0 items-center justify-center rounded-full bg-brand-blue text-brand-gold-mid ${
           isCompact ? "h-7 w-7" : "h-8 w-8"
         }`}
         aria-hidden

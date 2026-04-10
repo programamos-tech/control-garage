@@ -22,7 +22,6 @@ export function getMainNavLinks(dict: Dictionary, locale: Locale): NavLinkItem[]
     },
     { href: `${prefix}#reviews`, label: dict.nav.reviews },
     { href: `${prefix}#work`, label: dict.nav.work },
-    { href: `${prefix}#why`, label: dict.nav.why },
     { href: `${prefix}#faq`, label: dict.nav.faq },
     { href: `${prefix}#contact`, label: dict.nav.contact },
   ];

@@ -1,6 +1,6 @@
 export const SITE = {
-  name: "Control Garage",
-  legalName: "Control Garage",
+  name: "CONTROL GARAGE FL",
+  legalName: "CONTROL GARAGE FL",
   city: "Orlando",
   region: "FL",
   country: "US",
@@ -9,16 +9,31 @@ export const SITE = {
     es: {
       label: "Spanish line",
       tel: "+14074864303",
-      display: "+1 (407) 486-4303",
+      display: "(407) 486-4303",
     },
   },
   email: "info@controlgarage.com",
-  googleReviewsUrl:
-    "https://www.google.com/maps/place/Control+Garage/@28.214433,-81.458777,17z",
-  facebookUrl: "https://www.facebook.com/",
-  /** Embed without API key — coordinates from Google Maps listing */
+  /** Listing de Google Maps (reseñas) — enlace compartido del negocio */
+  googleReviewsUrl: "https://maps.app.goo.gl/v6mAGTHSJxAbHMhV7",
+  /** Página principal de Facebook */
+  facebookUrl: "https://www.facebook.com/ControlGarages",
+  /** Pestaña de reseñas / recomendaciones */
+  facebookReviewsUrl:
+    "https://www.facebook.com/ControlGarages/reviews/?id=100054295729505&sk=reviews",
+  /** Centro operativo (direcciones / referencia en mapa) */
+  mapCenter: { lat: 28.214433, lng: -81.458777 } as const,
+  /** Radio de servicio en copy (~25 km) */
+  serviceRadiusMeters: 25_000,
+  /** Equivalente en millas para textos US (~25 km) */
+  serviceRadiusMiles: 15,
+  /**
+   * Google Maps embebido — muestra Orlando y alrededores (zoom amplio).
+   * Más fiable que teselas OSM en iframes / navegadores restringidos.
+   */
   mapEmbedUrl:
-    "https://maps.google.com/maps?q=28.214433,-81.458777&hl=en&z=15&output=embed",
+    "https://www.google.com/maps?q=28.214433,-81.458777&z=10&hl=en&output=embed",
+  /** Foto de la camioneta de servicio (`public/`) */
+  serviceVanImage: "/4b89922e-82a5-40c4-8ed5-ce768380c4f0.jpeg",
   suppliers: {
     haas: "https://www.haasdoor.com/",
     liftmasterOpeners:
@@ -40,9 +55,15 @@ export function getWhatsAppNumber(): string {
   return process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "14074864303";
 }
 
-export function whatsappHref(message?: string): string {
+/**
+ * Abre WhatsApp con texto prefijado (p. ej. procedencia web/tienda).
+ * @param message — Texto adicional (p. ej. servicio concreto); opcional.
+ * @param leadPrefix — Primera parte del mensaje (viene del diccionario por idioma).
+ */
+export function whatsappHref(message: string | undefined, leadPrefix: string): string {
   const num = getWhatsAppNumber();
   const base = `https://wa.me/${num}`;
-  if (!message) return base;
-  return `${base}?text=${encodeURIComponent(message)}`;
+  const trimmed = message?.trim();
+  const body = trimmed ? `${leadPrefix}\n\n${trimmed}` : leadPrefix;
+  return `${base}?text=${encodeURIComponent(body)}`;
 }
