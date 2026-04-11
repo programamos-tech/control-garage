@@ -135,6 +135,12 @@ export function Footer({ dict, locale }: Props) {
               <div className="flex flex-wrap items-center justify-center gap-4 sm:justify-end">
                 <span className="text-white/45">{dict.footer.privacy}</span>
                 <Link
+                  href={`${prefix}/admin`}
+                  className="text-white/70 transition hover:text-white hover:underline"
+                >
+                  {dict.footer.adminPortal}
+                </Link>
+                <Link
                   href={`${prefix}#contact`}
                   className="font-semibold text-brand-gold-mid transition hover:text-brand-gold-light hover:underline"
                 >

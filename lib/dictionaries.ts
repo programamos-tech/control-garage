@@ -71,6 +71,8 @@ export type Dictionary = {
     columnServices: string;
     whyUsHeading: string;
     whyUsItems: string[];
+    /** Enlace al panel administrativo (demo UI) */
+    adminPortal: string;
   };
 };
 
@@ -209,6 +211,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Clear estimates — LiftMaster, Clopay & CHI",
         "24/7 availability for urgent garage door issues",
       ],
+      adminPortal: "Team dashboard (demo UI)",
     },
   },
   es: {
@@ -346,6 +349,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Cotizaciones claras — LiftMaster, Clopay y CHI",
         "Disponibilidad 24/7 para urgencias de garaje",
       ],
+      adminPortal: "Panel de equipo (demo UI)",
     },
   },
 };
