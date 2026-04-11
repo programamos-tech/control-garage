@@ -24,7 +24,7 @@ export function ServicesSection({ dict, locale }: Props) {
   return (
     <section
       id="services"
-      className="scroll-mt-24 bg-slate-50 pb-24 pt-32 sm:pt-40"
+      className="scroll-mt-24 bg-slate-50 pb-20 pt-12 sm:pb-24 sm:pt-16"
       aria-labelledby="services-title"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -34,7 +34,7 @@ export function ServicesSection({ dict, locale }: Props) {
         >
           {dict.services.title}
         </h2>
-        <div className="mt-14 grid gap-10 md:grid-cols-3">
+        <div className="mt-8 grid gap-8 sm:mt-10 md:grid-cols-3 md:gap-10">
           {dict.services.items.map((item, i) => (
             <article
               key={item.title}

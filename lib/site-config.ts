@@ -12,7 +12,7 @@ export const SITE = {
       display: "(407) 486-4303",
     },
   },
-  email: "info@controlgarage.com",
+  email: "Control.garages@gmail.com",
   /** Listing de Google Maps (reseñas) — enlace compartido del negocio */
   googleReviewsUrl: "https://maps.app.goo.gl/v6mAGTHSJxAbHMhV7",
   /** Página principal de Facebook */
