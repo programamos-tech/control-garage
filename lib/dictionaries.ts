@@ -47,8 +47,12 @@ export type Dictionary = {
     chiPickDoorLinkLabel: string;
     /** Texto después del enlace */
     chiPickDoorAfter: string;
+    /** Debajo de la galería CHI: ideas de diseño + técnico + llamar (idiomas) */
+    chiGalleryDesignNote: string;
     /** Subtítulo del carrusel de motores / openers */
     motorsTitle: string;
+    /** Línea bajo el título: repuestos en stock */
+    motorsPartsNote: string;
     motorsCarouselPrev: string;
     motorsCarouselNext: string;
     /** Alt de cada foto; usar "{n}" para el número (1, 2, …) */
@@ -160,10 +164,14 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "We work with trusted brands like LiftMaster, Clopay, and C.H.I. Select your preferred residential door style in",
       chiPickDoorLinkLabel: "C.H.I.’s official collection gallery",
       chiPickDoorAfter: "— the same lines we install and service in Orlando.",
+      chiGalleryDesignNote:
+        "Already have a look in mind — a photo, a sketch, or a door you admire? Tell us what you like: our technician can show you more styles, finishes, and details side by side so you choose with confidence. Reach out anytime — we’re here in English or Spanish.",
       motorsTitle: "Openers we install & service",
+      motorsPartsNote:
+        "We keep these openers, motors, and hardware in stock — so we can service and repair your door with the right parts.",
       motorsCarouselPrev: "Previous openers",
       motorsCarouselNext: "Next openers",
-      motorSlideAlt: "Garage door opener — reference photo {n}",
+      motorSlideAlt: "Opener, motor, or door hardware — reference photo {n}",
     },
     reviews: {
       title: "Reviews on Google & Facebook",
@@ -305,10 +313,14 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Trabajamos con marcas de confianza como LiftMaster, Clopay y C.H.I. Elija el estilo de puerta residencial que prefiera en",
       chiPickDoorLinkLabel: "la galería oficial de colecciones C.H.I.",
       chiPickDoorAfter: "— las mismas líneas que instalamos y damos servicio en Orlando.",
+      chiGalleryDesignNote:
+        "Si tiene una idea o un diseño que le guste —una foto, un ejemplo o algo que vio en otra casa— cuéntenoslo: nuestro técnico le mostrará más opciones y combinaciones para comparar con tranquilidad. Llámenos cuando quiera: le atendemos en inglés o en español.",
       motorsTitle: "Motores que instalamos y damos servicio",
+      motorsPartsNote:
+        "Aquí contamos con estos repuestos, motores y herrajes — para darle servicio y reparar su puerta con piezas adecuadas.",
       motorsCarouselPrev: "Motores anteriores",
       motorsCarouselNext: "Siguientes motores",
-      motorSlideAlt: "Motor para puerta de garaje — foto de referencia {n}",
+      motorSlideAlt: "Motor, operador o herraje de puerta — foto de referencia {n}",
     },
     reviews: {
       title: "Reseñas en Google y Facebook",

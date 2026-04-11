@@ -6,15 +6,16 @@ import type { Dictionary } from "@/lib/dictionaries";
 
 type Props = { dict: Dictionary };
 
-/** Imágenes en `public/` — productos LiftMaster / motores (orden de presentación). */
+/** Imágenes en `public/` — productos LiftMaster / motores / herrajes (orden de presentación). */
 const MOTOR_IMAGES = [
   "/8500WCAM_hero_1.png",
   "/2220L_1.png",
   "/c318e429-37a9-405a-a4c7-62e247dde07b.jpeg",
   "/a619c699-8107-4def-a102-949359927043.jpeg",
-  "/32fa252d-90dd-4474-a9ae-aaefaf09232f.jpeg",
-  "/024a53bb-4f4c-427b-8848-19d038dcdd76.jpeg",
   "/3b823a0b-03e8-4717-9127-d2456e48141a.jpeg",
+  "/images.jpeg",
+  "/Steel-Nylon-Garage-Door-Roller.jpg",
+  "/d0be8efb889ae45ee1af6de57438630ff1c9d61c9f5f5fc1966843b0f047e1c1__77228.png",
 ] as const;
 
 const AUTOPLAY_MS = 4800;
@@ -105,9 +106,12 @@ export function MotorsCarousel({ dict }: Props) {
       >
         {b.motorsTitle}
       </h3>
+      <p className="mx-auto mt-3 max-w-2xl text-pretty text-center text-sm leading-relaxed text-slate-600 sm:mt-4 sm:text-base">
+        {b.motorsPartsNote}
+      </p>
 
       <div
-        className="relative mt-8"
+        className="relative mt-6 sm:mt-8"
         onMouseEnter={() => {
           pauseRef.current = true;
         }}

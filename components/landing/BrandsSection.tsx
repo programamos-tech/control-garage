@@ -89,6 +89,28 @@ export function BrandsSection({ dict }: Props) {
           >
             <ChiGalleryRotator imageAlt={dict.brands.chiGalleryAlt} />
           </a>
+          <p className="mx-auto mt-4 max-w-2xl text-pretty text-center text-sm leading-relaxed text-slate-600 sm:mt-5 sm:text-base">
+            {dict.brands.chiGalleryDesignNote}
+          </p>
+          <p className="mt-3 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-center sm:mt-4 sm:gap-x-6">
+            <a
+              href={`tel:${SITE.phones.en.tel.replace(/\s/g, "")}`}
+              className="inline-flex items-baseline gap-2 text-sm font-extrabold tabular-nums text-brand-blue underline-offset-2 transition hover:text-brand-gold-dark hover:underline sm:text-base"
+            >
+              <span className="text-xs font-bold uppercase tracking-wide text-brand-blue/70">EN</span>
+              {SITE.phones.en.display}
+            </a>
+            <span className="hidden text-slate-300 sm:inline" aria-hidden>
+              |
+            </span>
+            <a
+              href={`tel:${SITE.phones.es.tel.replace(/\s/g, "")}`}
+              className="inline-flex items-baseline gap-2 text-sm font-extrabold tabular-nums text-brand-blue underline-offset-2 transition hover:text-brand-gold-dark hover:underline sm:text-base"
+            >
+              <span className="text-xs font-bold uppercase tracking-wide text-brand-blue/70">ES</span>
+              {SITE.phones.es.display}
+            </a>
+          </p>
         </div>
 
         <MotorsCarousel dict={dict} />

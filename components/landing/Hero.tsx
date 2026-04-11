@@ -49,10 +49,30 @@ export function Hero({ dict, locale }: Props) {
         <p className="mt-5 max-w-2xl text-sm leading-relaxed text-white [text-shadow:0_2px_26px_rgba(0,0,0,0.62),0_1px_2px_rgba(0,0,0,0.5)] sm:mt-6 sm:text-base md:text-lg">
           {dict.hero.sub}
         </p>
-        <div className="mt-7 md:mt-8">
-          <ButtonCta href="#services" variant="solid" className="w-full shrink-0 sm:w-auto">
+        <div className="mt-7 flex flex-col gap-4 min-[400px]:flex-row min-[400px]:flex-wrap min-[400px]:items-center min-[400px]:gap-4 sm:mt-8 sm:gap-5 md:gap-6">
+          <ButtonCta
+            href="#services"
+            variant="solid"
+            className="w-full shrink-0 min-[400px]:w-auto"
+          >
             {dict.hero.cta}
           </ButtonCta>
+          <div className="flex min-w-0 flex-row flex-wrap items-center gap-x-2.5 gap-y-2 sm:gap-x-3 md:gap-x-4">
+            <a
+              href={`tel:${SITE.phones.en.tel.replace(/\s/g, "")}`}
+              className="inline-flex items-baseline gap-2.5 text-lg font-extrabold tabular-nums leading-none text-white [text-shadow:0_2px_20px_rgba(0,0,0,0.6)] transition hover:text-brand-gold-light sm:text-2xl md:text-[1.65rem]"
+            >
+              <span className="text-xs font-bold uppercase tracking-wider text-white/80 sm:text-sm">EN</span>
+              <span>{SITE.phones.en.display}</span>
+            </a>
+            <a
+              href={`tel:${SITE.phones.es.tel.replace(/\s/g, "")}`}
+              className="inline-flex items-baseline gap-2.5 text-lg font-extrabold tabular-nums leading-none text-white [text-shadow:0_2px_20px_rgba(0,0,0,0.6)] transition hover:text-brand-gold-light sm:text-2xl md:text-[1.65rem]"
+            >
+              <span className="text-xs font-bold uppercase tracking-wider text-white/80 sm:text-sm">ES</span>
+              <span>{SITE.phones.es.display}</span>
+            </a>
+          </div>
         </div>
 
         <div className="mt-4 flex flex-row flex-wrap items-start gap-3 self-start sm:mt-5 sm:gap-4">

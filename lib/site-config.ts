@@ -20,18 +20,18 @@ export const SITE = {
   /** Pestaña de reseñas / recomendaciones */
   facebookReviewsUrl:
     "https://www.facebook.com/ControlGarages/reviews/?id=100054295729505&sk=reviews",
-  /** Centro operativo (direcciones / referencia en mapa) */
-  mapCenter: { lat: 28.214433, lng: -81.458777 } as const,
+  /** Centro del mapa — núcleo urbano de Orlando (área de servicio en pantalla) */
+  mapCenter: { lat: 28.53834, lng: -81.379234 } as const,
   /** Radio de servicio en copy (~25 km) */
   serviceRadiusMeters: 25_000,
   /** Equivalente en millas para textos US (~25 km) */
   serviceRadiusMiles: 15,
   /**
-   * Google Maps embebido — muestra Orlando y alrededores (zoom amplio).
+   * Google Maps embebido — centrado en Orlando, FL con zoom que enmarca la ciudad.
    * Más fiable que teselas OSM en iframes / navegadores restringidos.
    */
   mapEmbedUrl:
-    "https://www.google.com/maps?q=28.214433,-81.458777&z=10&hl=en&output=embed",
+    "https://www.google.com/maps?q=28.53834,-81.379234&z=10&hl=en&output=embed",
   /** Foto de la camioneta de servicio (`public/`) */
   serviceVanImage: "/4b89922e-82a5-40c4-8ed5-ce768380c4f0.jpeg",
   suppliers: {
