@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Dictionary } from "@/lib/dictionaries";
 import { SITE } from "@/lib/site-config";
+import { ChiGalleryRotator } from "./ChiGalleryRotator";
 import { MotorsCarousel } from "./MotorsCarousel";
 
 type Props = { dict: Dictionary };
@@ -19,7 +20,7 @@ const BRAND_LOGOS = [
   {
     name: "C.H.I. Overhead Doors",
     src: "/CHI-ColorLogo-removebg-preview.png",
-    href: SITE.suppliers.chi,
+    href: SITE.suppliers.chiResidentialCollections,
   },
 ] as const;
 
@@ -63,6 +64,32 @@ export function BrandsSection({ dict }: Props) {
             </li>
           ))}
         </ul>
+
+        <div className="mt-14 sm:mt-16">
+          <h3 className="text-center text-lg font-extrabold tracking-tight text-brand-blue sm:text-xl">
+            {dict.brands.chiGalleryHeading}
+          </h3>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-sm leading-relaxed text-slate-600 sm:text-base">
+            {dict.brands.chiPickDoorBefore}{" "}
+            <a
+              href={SITE.suppliers.chiResidentialCollections}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-brand-blue underline decoration-brand-blue/35 underline-offset-2 transition hover:text-brand-gold-dark hover:decoration-brand-gold-mid"
+            >
+              {dict.brands.chiPickDoorLinkLabel}
+            </a>{" "}
+            {dict.brands.chiPickDoorAfter}
+          </p>
+          <a
+            href={SITE.suppliers.chiResidentialCollections}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group mt-5 block overflow-hidden rounded-2xl border border-slate-200/90 bg-slate-100 shadow-sm ring-1 ring-slate-100 transition hover:border-brand-gold-mid/50 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold-mid focus-visible:ring-offset-2"
+          >
+            <ChiGalleryRotator imageAlt={dict.brands.chiGalleryAlt} />
+          </a>
+        </div>
 
         <MotorsCarousel dict={dict} />
       </div>

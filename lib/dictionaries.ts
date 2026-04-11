@@ -37,6 +37,16 @@ export type Dictionary = {
   brands: {
     title: string;
     sub: string;
+    /** Encima de la foto panorámica de estilos CHI */
+    chiGalleryHeading: string;
+    /** Alt accesible de la imagen de colección CHI */
+    chiGalleryAlt: string;
+    /** Texto antes del enlace a colecciones C.H.I. (marcas con las que trabajamos) */
+    chiPickDoorBefore: string;
+    /** Texto visible del enlace a chiohd.com/garage-doors#Collection */
+    chiPickDoorLinkLabel: string;
+    /** Texto después del enlace */
+    chiPickDoorAfter: string;
     /** Subtítulo del carrusel de motores / openers */
     motorsTitle: string;
     motorsCarouselPrev: string;
@@ -143,6 +153,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
       title: "Premium doors & openers we install",
       sub:
         "We install and service major garage door and opener brands, and we are happy to show you door styles and opener features before you decide.",
+      chiGalleryHeading: "C.H.I. Overhead Doors — styles we install",
+      chiGalleryAlt:
+        "Collage of residential C.H.I. garage doors in different finishes and window layouts — examples of doors Control Garage can install in Orlando.",
+      chiPickDoorBefore:
+        "We work with trusted brands like LiftMaster, Clopay, and C.H.I. Select your preferred residential door style in",
+      chiPickDoorLinkLabel: "C.H.I.’s official collection gallery",
+      chiPickDoorAfter: "— the same lines we install and service in Orlando.",
       motorsTitle: "Openers we install & service",
       motorsCarouselPrev: "Previous openers",
       motorsCarouselNext: "Next openers",
@@ -281,6 +298,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
       title: "Puertas y motores de calidad que instalamos",
       sub:
         "Instalamos y damos servicio a marcas líderes; le mostramos estilos de puerta y funciones del motor antes de decidir.",
+      chiGalleryHeading: "Puertas seccionales C.H.I. — estilos que instalamos",
+      chiGalleryAlt:
+        "Varias puertas de garaje residenciales C.H.I. en distintos acabados y ventanillas — ejemplos de lo que Control Garage puede instalar en Orlando.",
+      chiPickDoorBefore:
+        "Trabajamos con marcas de confianza como LiftMaster, Clopay y C.H.I. Elija el estilo de puerta residencial que prefiera en",
+      chiPickDoorLinkLabel: "la galería oficial de colecciones C.H.I.",
+      chiPickDoorAfter: "— las mismas líneas que instalamos y damos servicio en Orlando.",
       motorsTitle: "Motores que instalamos y damos servicio",
       motorsCarouselPrev: "Motores anteriores",
       motorsCarouselNext: "Siguientes motores",

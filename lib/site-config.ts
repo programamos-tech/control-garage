@@ -41,6 +41,8 @@ export const SITE = {
     liftmaster: "https://www.liftmaster.com/",
     clopay: "https://www.clopay.com/",
     chi: "https://www.chiohd.com/",
+    /** Colecciones residenciales C.H.I. — elegir estilo de puerta (ancla #Collection) */
+    chiResidentialCollections: "https://www.chiohd.com/garage-doors#Collection",
   },
 } as const;
 
