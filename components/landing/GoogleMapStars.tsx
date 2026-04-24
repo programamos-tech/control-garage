@@ -5,11 +5,14 @@ const GOOGLE_STAR_EMPTY = "#dadce0";
 export function GoogleMapStar({
   variant,
   halfGradientId = "gmaps-star-half",
+  partialFillPercent = 50,
   className = "h-[18px] w-[18px]",
 }: {
   variant: "full" | "half" | "empty";
   /** Solo para `half`: id único del `<linearGradient>` si conviven varios bloques con media estrella. */
   halfGradientId?: string;
+  /** Solo para `half`: porcentaje de relleno amarillo (0–100). Por defecto 50 (media estrella). */
+  partialFillPercent?: number;
   className?: string;
 }) {
   const d =
@@ -29,13 +32,14 @@ export function GoogleMapStar({
       </svg>
     );
   }
+  const pct = Math.min(100, Math.max(0, partialFillPercent));
   return (
     <svg className={svgCls} viewBox="0 0 24 24" aria-hidden>
       <defs>
         <linearGradient id={halfGradientId} x1="0" x2="1" y1="0" y2="0">
           <stop offset="0%" stopColor={GOOGLE_STAR} />
-          <stop offset="50%" stopColor={GOOGLE_STAR} />
-          <stop offset="50%" stopColor={GOOGLE_STAR_EMPTY} />
+          <stop offset={`${pct}%`} stopColor={GOOGLE_STAR} />
+          <stop offset={`${pct}%`} stopColor={GOOGLE_STAR_EMPTY} />
           <stop offset="100%" stopColor={GOOGLE_STAR_EMPTY} />
         </linearGradient>
       </defs>

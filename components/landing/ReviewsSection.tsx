@@ -48,7 +48,7 @@ export function ReviewsSection({ dict }: Props) {
                 {SITE.name}
               </span>
               <span className="mt-2 flex flex-wrap items-center gap-2 text-sm sm:text-base">
-                <span className="font-semibold text-white">4.5</span>
+                <span className="font-semibold text-white">4.6</span>
                 <span className="flex items-center gap-px">
                   <GoogleMapStar variant="full" className={starMd} />
                   <GoogleMapStar variant="full" className={starMd} />
@@ -57,10 +57,11 @@ export function ReviewsSection({ dict }: Props) {
                   <GoogleMapStar
                     variant="half"
                     halfGradientId="reviews-gmaps-star-half"
+                    partialFillPercent={60}
                     className={starMd}
                   />
                 </span>
-                <span className="text-white/80">(13)</span>
+                <span className="text-white/80">(17)</span>
               </span>
               <span className="mt-1.5 block text-xs text-white/75 sm:text-sm">{dict.hero.googleMapsCategory}</span>
             </span>

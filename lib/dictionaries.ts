@@ -93,10 +93,11 @@ export type Dictionary = {
 export const dictionaries: Record<Locale, Dictionary> = {
   en: {
     meta: {
-      title: "Garage Door Install & Replacement Orlando | CONTROL GARAGE FL",
+      title:
+        "Garage Door Repair Orlando | Installation, Replacement & Openers | CONTROL GARAGE FL",
       description:
-        "Garage door installation & replacement in Orlando, FL. Free estimate, new doors & openers, repairs, 24/7 emergencies. English & Spanish — (407) 487-0553 · (407) 486-4303.",
-      ogTitle: "CONTROL GARAGE FL — Install & replace garage doors | Orlando",
+        "Garage door repair in Orlando, FL — springs, cables, openers, off-track doors. Installation, replacement, free estimates & 24/7 emergencies. English & Spanish — (407) 487-0553 · (407) 486-4303.",
+      ogTitle: "CONTROL GARAGE FL — Garage door repair, install & replace | Orlando",
     },
     topBar: {
       rated: "#1 Trusted garage door team serving Orlando, FL — 24/7",
@@ -124,7 +125,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       cta: "Explore services",
       googleMapsCategory: "Garage door supplier",
       googleMapsLinkAria:
-        "Open Control Garage on Google Maps — 4.5 stars, 13 reviews",
+        "Open Control Garage on Google Maps — 4.6 stars, 17 reviews",
       facebookMapsCategory: "Garage door supplier · Facebook",
       facebookMapsLinkAria: "Open Control Garage reviews on Facebook",
       facebookRatingDisplay: "5.0",
@@ -241,10 +242,12 @@ export const dictionaries: Record<Locale, Dictionary> = {
   },
   es: {
     meta: {
-      title: "Instalación y reemplazo de puertas de garaje Orlando | CONTROL GARAGE FL",
+      title:
+        "Reparación de puertas de garaje Orlando | Instalación, reemplazo y motores | CONTROL GARAGE FL",
       description:
-        "Instalación y reemplazo de puertas de garaje en Orlando, FL. Cotización gratis, puertas y motores nuevos, reparación y emergencias 24h. Español e inglés — (407) 486-4303 · (407) 487-0553.",
-      ogTitle: "CONTROL GARAGE FL — Instalar y reemplazar puertas de garaje | Orlando",
+        "Reparación de puertas de garaje en Orlando, FL — resortes, cables, motores, puertas fuera de riel. Instalación, reemplazo, cotización gratis y emergencias 24h. Español e inglés — (407) 486-4303 · (407) 487-0553.",
+      ogTitle:
+        "CONTROL GARAGE FL — Reparación, instalación y reemplazo de puertas de garaje | Orlando",
     },
     topBar: {
       rated:
@@ -273,7 +276,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       cta: "Ver servicios",
       googleMapsCategory: "Proveedor de puertas de garaje",
       googleMapsLinkAria:
-        "Abrir Control Garage en Google Maps — 4,5 estrellas, 13 reseñas",
+        "Abrir Control Garage en Google Maps — 4,6 estrellas, 17 reseñas",
       facebookMapsCategory: "Proveedor de puertas de garaje · Facebook",
       facebookMapsLinkAria: "Abrir las reseñas de Control Garage en Facebook",
       facebookRatingDisplay: "5,0",

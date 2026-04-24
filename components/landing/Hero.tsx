@@ -9,9 +9,17 @@ type Props = { dict: Dictionary; locale: string };
 /** Imagen principal en `public/CHI-garage-door-collection.jpg`. */
 const HERO_IMAGE = "/CHI-garage-door-collection.jpg";
 
+/** Hero vertical móvil (`public/hero-mobile-portrait.png`, export del diseño vertical). */
+const HERO_IMAGE_MOBILE = "/hero-mobile-portrait.png";
+
 const heroAlt: Record<string, string> = {
   en: "CHI garage door collection — Control Garage, Orlando area",
   es: "Colección de puertas CHI — Control Garage, zona Orlando",
+};
+
+const heroAltMobile: Record<string, string> = {
+  en: "Modern home with wood garage door — Control Garage, Orlando area",
+  es: "Vivienda moderna con puerta de garaje de madera — Control Garage, zona Orlando",
 };
 
 const reviewCardClass =
@@ -19,6 +27,7 @@ const reviewCardClass =
 
 export function Hero({ dict, locale }: Props) {
   const alt = heroAlt[locale] ?? heroAlt.en;
+  const altMobile = heroAltMobile[locale] ?? heroAltMobile.en;
 
   return (
     <section
@@ -26,11 +35,19 @@ export function Hero({ dict, locale }: Props) {
       aria-labelledby="hero-heading"
     >
       <Image
+        src={HERO_IMAGE_MOBILE}
+        alt={altMobile}
+        fill
+        priority
+        className="object-cover object-center md:hidden"
+        sizes="100vw"
+        quality={75}
+      />
+      <Image
         src={HERO_IMAGE}
         alt={alt}
         fill
-        priority
-        className="object-cover object-bottom"
+        className="hidden object-cover object-bottom md:block"
         sizes="100vw"
         quality={90}
       />
@@ -85,15 +102,19 @@ export function Hero({ dict, locale }: Props) {
           >
             <span className="text-[15px] font-semibold leading-tight text-white">{SITE.name}</span>
             <span className="mt-1 flex flex-wrap items-center gap-1.5 text-[13px] text-white/90">
-              <span className="font-medium text-white">4.5</span>
+              <span className="font-medium text-white">4.6</span>
               <span className="flex items-center gap-px">
                 <GoogleMapStar variant="full" />
                 <GoogleMapStar variant="full" />
                 <GoogleMapStar variant="full" />
                 <GoogleMapStar variant="full" />
-                <GoogleMapStar variant="half" halfGradientId="hero-gmaps-star-half" />
+                <GoogleMapStar
+                  variant="half"
+                  halfGradientId="hero-gmaps-star-half"
+                  partialFillPercent={60}
+                />
               </span>
-              <span className="text-white/75">(13)</span>
+              <span className="text-white/75">(17)</span>
             </span>
             <span className="mt-0.5 text-[13px] text-white/70">{dict.hero.googleMapsCategory}</span>
           </a>
