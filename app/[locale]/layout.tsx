@@ -32,9 +32,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           "CONTROL GARAGE FL",
         ]
       : [
+          "garage repair orlando",
+          "garage repair",
+          "residential garage repair orlando",
+          "overhead door repair orlando",
           "garage door repair orlando",
           "garage door repair",
           "garage door repair Orlando",
+          "emergency garage repair orlando",
+          "garage service orlando",
           "garage door installation Orlando",
           "garage door replacement Orlando",
           "garage door opener Orlando",

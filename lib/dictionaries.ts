@@ -94,14 +94,14 @@ export const dictionaries: Record<Locale, Dictionary> = {
   en: {
     meta: {
       title:
-        "Garage door repair Orlando — install, replace & openers | Control Garage FL",
+        "Garage repair Orlando — garage doors, install, replace & openers | Control Garage FL",
       description:
-        "Control Garage FL — garage door repair Orlando, FL: springs, cables, openers, off-track doors, new installs. Free estimates & 24/7 emergencies. English & Spanish — (407) 487-0553 · (407) 486-4303.",
+        "Control Garage FL — garage repair Orlando, FL: springs, cables, openers, off-track doors, panels, and full garage door repair. Residential garage service, new installs & 24/7 emergencies. English & Spanish — (407) 487-0553 · (407) 486-4303.",
       ogTitle:
-        "Garage door repair Orlando — installation, replacement & 24/7 | Control Garage FL",
+        "Garage repair Orlando — overhead doors, installation & 24/7 | Control Garage FL",
     },
     topBar: {
-      rated: "#1 Trusted garage door team — Control Garage FL, Orlando, FL — 24/7",
+      rated: "#1 Trusted garage repair & door team — Control Garage FL, Orlando, FL — 24/7",
       callToday: "Call now",
       cta: "Get a quick estimate",
     },
@@ -117,12 +117,12 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     about: {
       body:
-        "Need garage door repair Orlando? Control Garage FL is the call — clear quotes, the right parts, and honest work. Control Garage FL handles installs, openers, and repairs across the area; English and Spanish, LiftMaster, Clopay & CHI.",
+        "Need garage repair in Orlando or full garage door service? Control Garage FL is the call — clear quotes, the right parts, and honest work. We handle residential garage repair, installs, openers, and overhead door issues across the area; English and Spanish, LiftMaster, Clopay & CHI.",
     },
     hero: {
-      h1: "Garage door repair Orlando — Control Garage FL\ninstall, replace & 24/7",
+      h1: "Garage repair Orlando — Control Garage FL\ngarage doors · install · replace · 24/7",
       sub:
-        "Garage door repair Orlando is our daily work — Control Garage FL: new doors, openers, and fixes for broken springs, off-track doors, and noisy openers, with same-day help when you need it most.",
+        "Garage repair and garage door repair Orlando are our daily focus — Control Garage FL: new doors, openers, broken springs, off-track doors, and noisy openers, with same-day help when you need it most.",
       cta: "Explore services",
       googleMapsCategory: "Garage door supplier",
       googleMapsLinkAria:
@@ -138,19 +138,19 @@ export const dictionaries: Record<Locale, Dictionary> = {
         {
           title: "Garage door installation",
           body:
-            "Control Garage FL installs new garage doors with clean, safe hardware and options that match your home — perfect when you are upgrading curb appeal or replacing a damaged panel system.",
+            "Beyond quick garage repair, Control Garage FL installs new garage doors with clean, safe hardware and options that match your home — perfect when you are upgrading curb appeal or replacing a damaged panel system.",
           cta: "Free installation quote",
         },
         {
-          title: "Garage door repair",
+          title: "Garage repair & door repair",
           body:
-            "Garage door repair Orlando: Control Garage FL fixes broken springs, cables, rollers, sensors, and openers — we diagnose the real problem and repair it right the first time.",
+            "Garage repair Orlando and overhead door repair: Control Garage FL fixes broken springs, cables, rollers, sensors, and openers — residential garage repair with clear pricing and same-day slots when available.",
           cta: "Book a repair visit",
         },
         {
           title: "Opener repair & replacement",
           body:
-            "Control Garage FL repairs and replaces garage door openers with trusted operators, remotes, and smart-home features — including LiftMaster solutions we install and service.",
+            "Garage repair often starts at the opener: Control Garage FL repairs and replaces garage door openers with trusted operators, remotes, and smart-home features — including LiftMaster solutions we install and service.",
           cta: "Opener repair or upgrade",
         },
       ],
@@ -158,7 +158,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     brands: {
       title: "Premium doors & openers — Control Garage FL",
       sub:
-        "Control Garage FL installs and services major garage door and opener brands, and we are happy to show you door styles and opener features before you decide.",
+        "Control Garage FL installs and services major garage door and opener brands — from emergency garage repair calls to planned upgrades — and we are happy to show you door styles and opener features before you decide.",
       chiGalleryHeading: "C.H.I. Overhead Doors — styles Control Garage FL installs",
       chiGalleryAlt:
         "Collage of residential C.H.I. garage doors in different finishes and window layouts — examples of doors Control Garage FL can install in Orlando.",
@@ -170,7 +170,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Already have a look in mind — a photo, a sketch, or a door you admire? Tell Control Garage FL what you like: our technician can show you more styles, finishes, and details side by side so you choose with confidence. Reach out anytime — we’re here in English or Spanish.",
       motorsTitle: "Openers Control Garage FL installs & services",
       motorsPartsNote:
-        "Control Garage FL keeps these openers, motors, and hardware in stock — so we can service and repair your door with the right parts.",
+        "Control Garage FL keeps these openers, motors, and hardware in stock for garage repair and service — so we can fix your door with the right parts.",
       motorsCarouselPrev: "Previous openers",
       motorsCarouselNext: "Next openers",
       motorSlideAlt: "Control Garage FL — opener, motor, or door hardware — reference photo {n}",
@@ -178,31 +178,31 @@ export const dictionaries: Record<Locale, Dictionary> = {
     reviews: {
       title: "Reviews on Google & Facebook — Control Garage FL",
       sub:
-        "Control Garage FL — local homeowners looking for garage door repair Orlando can read why others trust our punctuality, honest pricing, and clean installs before they call.",
+        "Control Garage FL — homeowners looking for garage repair or garage door repair in Orlando can read why others trust our punctuality, honest pricing, and clean installs before they call.",
     },
     work: {
       title: "See our recent work — Control Garage FL",
       sub:
-        "Control Garage FL — a quick look at installs and repairs we have completed for homeowners across Orlando — tap a photo to view it full size.",
+        "Control Garage FL — garage repair, installs, and upgrades we have completed for homeowners across Orlando — tap a photo to view it full size.",
     },
     mobileService: {
       title: "Control Garage FL — we roll up to your driveway",
       sub:
-        "Our stocked Control Garage FL service van covers Greater Orlando — fast diagnostics and same-day help when you need it.",
+        "Our stocked Control Garage FL service van covers Greater Orlando — fast garage repair diagnostics and same-day help when you need it.",
       imageAlt:
-        "Control Garage FL mobile service van — garage door repair and installation in Orlando, FL",
+        "Control Garage FL mobile service van — garage repair, garage door repair, and installation in Orlando, FL",
       cta: "Contact now!",
     },
     faq: {
-      title: "Control Garage FL — garage door repair & installation FAQ (Orlando)",
+      title: "Control Garage FL — garage repair & garage door FAQ (Orlando)",
       items: [
         {
-          q: "What does Control Garage FL offer for garage door repair, installation, replacement, and openers in Orlando?",
-          a: "Control Garage FL provides garage door repair in Orlando (springs, cables, sensors, off-track doors) plus garage door installation Orlando customers choose for curb appeal. We also handle garage door replacement Orlando jobs and garage door opener Orlando service — tune-ups, repairs, and smart-opener installs including LiftMaster. English (407) 487-0553 · Spanish (407) 486-4303.",
+          q: "What does Control Garage FL offer for garage repair, garage door repair, installation, and openers in Orlando?",
+          a: "Control Garage FL provides garage repair and garage door repair in Orlando (springs, cables, sensors, off-track doors, panels) plus garage door installation Orlando customers choose for curb appeal. We also handle garage door replacement Orlando jobs and garage door opener Orlando service — tune-ups, repairs, and smart-opener installs including LiftMaster. English (407) 487-0553 · Spanish (407) 486-4303.",
         },
         {
           q: "My garage door will not open — do you offer emergency service?",
-          a: "Yes. Control Garage FL provides 24/7 emergency garage door repair in Orlando for common failures like broken springs, snapped cables, off-track doors, and opener issues. Call the English or Spanish line and we will dispatch as soon as possible.",
+          a: "Yes. Control Garage FL provides 24/7 emergency garage repair and emergency garage door repair in Orlando for broken springs, snapped cables, off-track doors, and opener issues. Call the English or Spanish line and we will dispatch as soon as possible.",
         },
         {
           q: "Do you install new garage doors and openers?",
@@ -210,7 +210,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
         {
           q: "Can you fix a noisy or slow garage door?",
-          a: "In most cases, yes. Noisy operation is often related to rollers, hinges, springs, or an opener that needs tune-up or replacement. Control Garage FL inspects the full system and recommends the safest fix.",
+          a: "In most cases, yes — that is core garage repair work. Noisy operation is often related to rollers, hinges, springs, or an opener that needs tune-up or replacement. Control Garage FL inspects the full system and recommends the safest fix.",
         },
         {
           q: "Do you speak Spanish?",
@@ -225,7 +225,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     contact: {
       sectionTitle: "Contact — Control Garage FL",
       serviceAreaNote:
-        "Control Garage FL — this map shows the greater Orlando area where we provide mobile garage door service. We typically work within about 15 miles of our base. If you are not sure whether your address is in range, call us — we are happy to check coverage.",
+        "Control Garage FL — this map shows the greater Orlando area where we provide mobile garage repair and garage door service. We typically work within about 15 miles of our base. If you are not sure whether your address is in range, call us — we are happy to check coverage.",
       whatsappFabAria: "Message Control Garage FL on WhatsApp — opens in a new tab",
       whatsappLeadPrefix: "Hi! I'm messaging from the Control Garage FL website.",
     },
@@ -237,10 +237,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
       columnServices: "Services",
       whyUsHeading: "Why Control Garage FL",
       whyUsItems: [
-        "Control Garage FL — local mobile service, Greater Orlando",
+        "Control Garage FL — garage repair Orlando & Greater Orlando",
         "English & Spanish, same-day when you need it",
         "Clear estimates — LiftMaster, Clopay & CHI",
-        "24/7 availability for urgent garage door issues",
+        "24/7 availability for urgent garage repair & door issues",
       ],
       adminPortal: "Team dashboard (demo UI)",
     },
