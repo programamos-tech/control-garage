@@ -37,8 +37,8 @@ type PlaceDetailsJson = {
 
 function placeDisplayName(data: PlaceDetailsJson): string {
   const d = data.displayName;
-  if (typeof d === "string") return d.trim() || "Control Garage";
-  return d?.text?.trim() || "Control Garage";
+  if (typeof d === "string") return d.trim() || "Control Garage FL";
+  return d?.text?.trim() || "Control Garage FL";
 }
 
 function normalizePlaceId(raw: string): string {
@@ -53,7 +53,7 @@ async function resolvePlaceId(apiKey: string): Promise<string | null> {
 
   const query =
     process.env.GOOGLE_PLACES_SEARCH_QUERY?.trim() ||
-    "Control Garage Orlando FL garage door";
+    "Control Garage FL Orlando FL garage door";
 
   const res = await fetch("https://places.googleapis.com/v1/places:searchText", {
     method: "POST",

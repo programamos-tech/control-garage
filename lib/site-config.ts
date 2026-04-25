@@ -1,5 +1,7 @@
 export const SITE = {
-  name: "CONTROL GARAGE FL",
+  /** Marca en pantalla y textos de marketing (misma forma en EN/ES). */
+  name: "Control Garage FL",
+  /** Nombre legal / facturación en mayúsculas. */
   legalName: "CONTROL GARAGE FL",
   city: "Orlando",
   region: "FL",

@@ -130,7 +130,7 @@ export function Footer({ dict, locale }: Props) {
           <div className="mx-auto mt-12 w-full max-w-7xl border-t border-white/15 pt-8">
             <div className="flex flex-col items-center justify-between gap-4 text-center text-xs text-white/55 sm:flex-row sm:text-left">
               <p>
-                © {year} {SITE.legalName}. {dict.footer.rights}
+                © {year} {SITE.name}. {dict.footer.rights}
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4 sm:justify-end">
                 <span className="text-white/45">{dict.footer.privacy}</span>

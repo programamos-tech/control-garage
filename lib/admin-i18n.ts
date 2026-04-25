@@ -64,8 +64,8 @@ export type AdminStrings = {
 };
 
 const en: AdminStrings = {
-  metaTitle: "Control Garage — ERP demo",
-  appName: "Control Garage",
+  metaTitle: "Control Garage FL — ERP demo",
+  appName: "Control Garage FL",
   appSubtitle: "Operations — Orlando, FL",
   sidebarHeading: "Dashboard",
   backToSite: "Back to website",
@@ -211,8 +211,8 @@ const en: AdminStrings = {
 };
 
 const es: AdminStrings = {
-  metaTitle: "Control Garage — demo ERP",
-  appName: "Control Garage",
+  metaTitle: "Control Garage FL — demo ERP",
+  appName: "Control Garage FL",
   appSubtitle: "Operaciones — Orlando, FL",
   sidebarHeading: "Dashboard",
   backToSite: "Volver al sitio web",

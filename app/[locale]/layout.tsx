@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { locales, getDictionary, type Locale } from "@/lib/dictionaries";
-import { getSiteUrl } from "@/lib/site-config";
+import { getSiteUrl, SITE } from "@/lib/site-config";
 
 type Props = {
   children: React.ReactNode;
@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           "instalación puerta de garaje Orlando",
           "reemplazo puerta de garaje Orlando",
           "motor garaje Orlando",
+          "Control Garage FL",
           "CONTROL GARAGE FL",
         ]
       : [
@@ -36,6 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           "garage door installation Orlando",
           "garage door replacement Orlando",
           "garage door opener Orlando",
+          "Control Garage FL",
           "CONTROL GARAGE FL",
         ];
 
@@ -56,7 +58,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       locale: loc === "es" ? "es_US" : "en_US",
       alternateLocale: loc === "es" ? ["en_US"] : ["es_US"],
       url: loc === "en" ? `${base}/en` : `${base}/es`,
-      siteName: "CONTROL GARAGE FL",
+      siteName: SITE.name,
       title: dict.meta.ogTitle,
       description: dict.meta.description,
       images: [
@@ -64,7 +66,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: "/logo_transparent.png",
           width: 512,
           height: 512,
-          alt: "CONTROL GARAGE FL logo",
+          alt: "Control Garage FL logo",
         },
       ],
     },

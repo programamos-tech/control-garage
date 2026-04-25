@@ -11,6 +11,7 @@ export function JsonLd({ locale, dict }: Props) {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
     name: SITE.name,
+    alternateName: SITE.legalName,
     description: dict.meta.description,
     url,
     telephone: [SITE.phones.en.tel, SITE.phones.es.tel],

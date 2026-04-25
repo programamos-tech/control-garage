@@ -13,13 +13,13 @@ const HERO_IMAGE = "/CHI-garage-door-collection.jpg";
 const HERO_IMAGE_MOBILE = "/hero-mobile-portrait.png";
 
 const heroAlt: Record<string, string> = {
-  en: "CHI garage door collection — Control Garage, Orlando area",
-  es: "Colección de puertas CHI — Control Garage, zona Orlando",
+  en: "CHI garage door collection — Control Garage FL, Orlando area",
+  es: "Colección de puertas CHI — Control Garage FL, zona Orlando",
 };
 
 const heroAltMobile: Record<string, string> = {
-  en: "Modern home with wood garage door — Control Garage, Orlando area",
-  es: "Vivienda moderna con puerta de garaje de madera — Control Garage, zona Orlando",
+  en: "Modern home with wood garage door — Control Garage FL, Orlando area",
+  es: "Vivienda moderna con puerta de garaje de madera — Control Garage FL, zona Orlando",
 };
 
 const reviewCardClass =

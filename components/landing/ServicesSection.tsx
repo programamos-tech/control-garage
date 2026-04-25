@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { Dictionary, Locale } from "@/lib/dictionaries";
-import { whatsappHref } from "@/lib/site-config";
+import { SITE, whatsappHref } from "@/lib/site-config";
 
 const IDS = ["installation", "repair", "opener"] as const;
 
@@ -13,9 +13,9 @@ const SERVICE_IMAGES = [
 
 function waMessageForService(locale: Locale, serviceTitle: string) {
   if (locale === "es") {
-    return `Hola CONTROL GARAGE FL — quiero información sobre: ${serviceTitle}`;
+    return `Hola ${SITE.name} — quiero información sobre: ${serviceTitle}`;
   }
-  return `Hi CONTROL GARAGE FL — I'd like info about: ${serviceTitle}`;
+  return `Hi ${SITE.name} — I'd like info about: ${serviceTitle}`;
 }
 
 type Props = { dict: Dictionary; locale: Locale };

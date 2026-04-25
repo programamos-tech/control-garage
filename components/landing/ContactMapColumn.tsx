@@ -8,7 +8,7 @@ export function ContactMapColumn({ dict }: Props) {
     <div className="flex w-full flex-col">
       <div className="relative h-[min(56vh,420px)] min-h-[280px] w-full overflow-hidden border-y border-white/20 bg-slate-900/30 shadow-[0_12px_40px_rgba(0,0,0,0.2)] sm:h-[min(68vh,640px)] sm:min-h-[380px]">
         <iframe
-          title="Orlando, FL — CONTROL GARAGE FL service area"
+          title="Orlando, FL — Control Garage FL service area"
           src={SITE.mapEmbedUrl}
           className="absolute inset-0 h-full w-full border-0"
           loading="lazy"
