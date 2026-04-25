@@ -41,6 +41,14 @@ export function JsonLd({ locale, dict }: Props) {
     },
     sameAs: [SITE.googleReviewsUrl, SITE.facebookUrl],
     priceRange: "$$",
+    /** Coincide con la tarjeta pública de Google Maps en la landing. */
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: 4.6,
+      reviewCount: 17,
+      bestRating: 5,
+      worstRating: 1,
+    },
   };
 
   const faq = {

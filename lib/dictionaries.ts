@@ -197,6 +197,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
       title: "Garage door repair & installation FAQ (Orlando)",
       items: [
         {
+          q: "What do you offer for garage door repair, installation, replacement, and openers in Orlando?",
+          a: "We provide garage door repair in Orlando (springs, cables, sensors, off-track doors) plus garage door installation Orlando customers choose for curb appeal. We also handle garage door replacement Orlando jobs and garage door opener Orlando service — tune-ups, repairs, and smart-opener installs including LiftMaster. English (407) 487-0553 · Spanish (407) 486-4303.",
+        },
+        {
           q: "My garage door will not open — do you offer emergency service?",
           a: "Yes. We provide 24/7 emergency garage door repair in Orlando for common failures like broken springs, snapped cables, off-track doors, and opener issues. Call the English or Spanish line and we will dispatch as soon as possible.",
         },
@@ -347,6 +351,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
     faq: {
       title: "Preguntas frecuentes — garaje en Orlando",
       items: [
+        {
+          q: "¿Qué ofrecen en Orlando: reparación, instalación, reemplazo o motor de garaje?",
+          a: "Reparación de puertas de garaje Orlando y alrededores: resortes, cables, sensores y puertas fuera de riel. Instalación puerta de garaje Orlando para renovar fachada; reemplazo puerta de garaje Orlando cuando conviene cambiar el sistema completo; y motor garaje Orlando — reparación o cambio, incluido LiftMaster. Reparación garaje Orlando con urgencias 24/7: (407) 486-4303 (español) · (407) 487-0553 (inglés).",
+        },
         {
           q: "Se me dañó el garaje y no abre — ¿tienen emergencias?",
           a: "Sí. Ofrecemos servicio de emergencia 24/7 en Orlando para resortes rotos, cables, puertas fuera de riel y fallas del motor. Llame a la línea en inglés o español y coordinamos su visita.",
