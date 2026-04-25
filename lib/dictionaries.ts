@@ -94,10 +94,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
   en: {
     meta: {
       title:
-        "Garage Door Repair Orlando | Installation, Replacement & Openers | CONTROL GARAGE FL",
+        "Garage door repair Orlando — install, replace & openers | CONTROL GARAGE FL",
       description:
-        "Garage door repair in Orlando, FL — springs, cables, openers, off-track doors. Installation, replacement, free estimates & 24/7 emergencies. English & Spanish — (407) 487-0553 · (407) 486-4303.",
-      ogTitle: "CONTROL GARAGE FL — Garage door repair, install & replace | Orlando",
+        "Garage door repair Orlando, FL: springs, cables, openers, off-track doors, new installs. Free estimates & 24/7 emergencies. English & Spanish — (407) 487-0553 · (407) 486-4303.",
+      ogTitle:
+        "Garage door repair Orlando — installation, replacement & 24/7 | CONTROL GARAGE FL",
     },
     topBar: {
       rated: "#1 Trusted garage door team serving Orlando, FL — 24/7",
@@ -116,12 +117,12 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     about: {
       body:
-        "Garage door repair, installs, and openers in Greater Orlando. English & Spanish — LiftMaster, Clopay & CHI.",
+        "Need garage door repair Orlando? Control Garage is the call — clear quotes, the right parts, and honest work. We handle installs, openers, and repairs across the area; English and Spanish, LiftMaster, Clopay & CHI.",
     },
     hero: {
-      h1: "Orlando garage door installation, replacement\n& repair",
+      h1: "Garage door repair Orlando —\ninstall, replace & 24/7",
       sub:
-        "Trust Control Garage for fast, professional repairs, new doors, and openers across Orlando — broken springs, off-track doors, noisy openers, and same-day help when you need it most.",
+        "Garage door repair Orlando is our daily work — from Control Garage: new doors, openers, and fixes for broken springs, off-track doors, and noisy openers, with same-day help when you need it most.",
       cta: "Explore services",
       googleMapsCategory: "Garage door supplier",
       googleMapsLinkAria:
@@ -143,7 +144,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         {
           title: "Garage door repair",
           body:
-            "Fix broken garage doors in Orlando: springs, cables, rollers, sensors, and openers — we diagnose the real problem and repair it right the first time.",
+            "Garage door repair Orlando: we fix broken springs, cables, rollers, sensors, and openers — we diagnose the real problem and repair it right the first time.",
           cta: "Book a repair visit",
         },
         {
@@ -177,7 +178,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     reviews: {
       title: "Reviews on Google & Facebook",
       sub:
-        "Local homeowners rate our punctuality, honest pricing, and clean installs. Read recent feedback before you call.",
+        "Local homeowners looking for garage door repair Orlando can read why others trust our punctuality, honest pricing, and clean installs before they call.",
     },
     work: {
       title: "See our recent work",
@@ -243,11 +244,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
   es: {
     meta: {
       title:
-        "Reparación de puertas de garaje Orlando | Instalación, reemplazo y motores | CONTROL GARAGE FL",
+        "Reparación de puertas de garaje Orlando — instalación, reemplazo y 24/7 | CONTROL GARAGE FL",
       description:
-        "Reparación de puertas de garaje en Orlando, FL — resortes, cables, motores, puertas fuera de riel. Instalación, reemplazo, cotización gratis y emergencias 24h. Español e inglés — (407) 486-4303 · (407) 487-0553.",
+        "Reparación de puertas de garaje Orlando, FL: resortes, cables, motores, puertas fuera de riel e instalación nueva. Cotización gratis y emergencias 24h. Español e inglés — (407) 486-4303 · (407) 487-0553.",
       ogTitle:
-        "CONTROL GARAGE FL — Reparación, instalación y reemplazo de puertas de garaje | Orlando",
+        "Reparación de puertas de garaje Orlando — instalación, reemplazo y 24/7 | CONTROL GARAGE FL",
     },
     topBar: {
       rated:
@@ -267,12 +268,12 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     about: {
       body:
-        "Reparación, instalación y motores en Orlando y alrededores. Inglés y español — LiftMaster, Clopay y CHI.",
+        "La reparación de puertas de garaje en Orlando exige diagnóstico claro, repuestos adecuados y presupuestos justos. Instalación, motores y reparación en toda el área de Orlando — inglés y español, LiftMaster, Clopay y CHI.",
     },
     hero: {
-      h1: "Instalación, reemplazo y reparación de puertas de garaje en Orlando",
+      h1: "Reparación de puertas de garaje Orlando —\ninstalación, reemplazo y 24/7",
       sub:
-        "Confíe en Control Garage para reparaciones rápidas, puertas nuevas y motores en Orlando — resortes rotos, puertas fuera de riel, motores ruidosos y ayuda el mismo día cuando más lo necesita.",
+        "Para reparación de puertas de garaje, Orlando y alrededores eligen a Control Garage — puertas nuevas, motores, resortes rotos, rieles, motores ruidosos y atención el mismo día cuando hace falta.",
       cta: "Ver servicios",
       googleMapsCategory: "Proveedor de puertas de garaje",
       googleMapsLinkAria:
@@ -328,7 +329,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     reviews: {
       title: "Reseñas en Google y Facebook",
       sub:
-        "Vecinos en Orlando destacan puntualidad, precios claros e instalaciones limpias. Lea opiniones antes de llamar.",
+        "Si busca reparación de puertas de garaje, Orlando y vecinos confían en nuestra puntualidad, precios claros e instalaciones cuidadosas. Lea opiniones antes de llamar.",
     },
     work: {
       title: "Conozca nuestros trabajos",

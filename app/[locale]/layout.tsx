@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const keywords =
     loc === "es"
       ? [
+          "reparación de puertas de garaje orlando",
           "reparación puerta de garaje Orlando",
           "reparación garaje Orlando",
           "instalación puerta de garaje Orlando",
@@ -29,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           "CONTROL GARAGE FL",
         ]
       : [
+          "garage door repair orlando",
           "garage door repair",
           "garage door repair Orlando",
           "garage door installation Orlando",
