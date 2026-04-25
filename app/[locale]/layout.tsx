@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { locales, getDictionary, type Locale } from "@/lib/dictionaries";
+import { publicHreflangLanguages } from "@/lib/hreflang-public";
 import { getSiteUrl, SITE } from "@/lib/site-config";
 
 type Props = {
@@ -47,11 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords,
     alternates: {
       canonical: loc === "en" ? `${base}/en` : `${base}/es`,
-      languages: {
-        en: `${base}/en`,
-        es: `${base}/es`,
-        "x-default": `${base}/en`,
-      },
+      languages: publicHreflangLanguages(),
     },
     openGraph: {
       type: "website",

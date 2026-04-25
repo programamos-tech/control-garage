@@ -1,14 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getSiteUrl } from "@/lib/site-config";
 import { locales } from "@/lib/dictionaries";
-
-function hreflangAlternates(base: string) {
-  return {
-    en: `${base}/en`,
-    es: `${base}/es`,
-    "x-default": `${base}/en`,
-  } as const;
-}
+import { publicHreflangLanguages } from "@/lib/hreflang-public";
 
 /**
  * URLs públicas indexables. Ampliar aquí cuando añadas rutas de marketing
@@ -17,7 +10,7 @@ function hreflangAlternates(base: string) {
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = getSiteUrl();
   const now = new Date();
-  const languages = hreflangAlternates(base);
+  const languages = publicHreflangLanguages();
 
   const home: MetadataRoute.Sitemap[number] = {
     url: `${base}/`,
