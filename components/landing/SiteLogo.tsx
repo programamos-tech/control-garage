@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { images } from "@/lib/image-assets";
+import { IMAGE_QUALITY } from "@/lib/image-quality";
 
 type Size = "top" | "nav" | "footer";
 
@@ -39,7 +40,7 @@ export function SiteLogo({ size, className = "", priority = false, onGold = fals
           ? "(max-width: 640px) 260px, (max-width: 1024px) 300px, 400px"
           : "(max-width: 640px) 46vw, 260px"
       }
-      quality={85}
+      quality={IMAGE_QUALITY.logo}
       className={`object-contain object-left ${sizeClass[size]} ${onGold ? goldSurfaceFilter : ""} ${className}`}
     />
   );

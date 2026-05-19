@@ -2,6 +2,7 @@ import Image from "next/image";
 import { preload } from "react-dom";
 import type { Dictionary, Locale } from "@/lib/dictionaries";
 import { images } from "@/lib/image-assets";
+import { IMAGE_QUALITY } from "@/lib/image-quality";
 import { SITE } from "@/lib/site-config";
 import { ButtonCta } from "./ButtonCta";
 import { GoogleMapStar } from "./GoogleMapStars";
@@ -47,8 +48,8 @@ export function Hero({ dict, locale }: Props) {
         alt={alt}
         fill
         className="hero-lcp-image hidden object-cover object-bottom md:block"
-        sizes="100vw"
-        quality={75}
+        sizes="(min-width: 768px) 100vw, 0px"
+        quality={IMAGE_QUALITY.hero}
       />
       <div
         className="absolute inset-0 z-[1] bg-gradient-to-r from-brand-blue/68 from-[5%] via-brand-blue/38 via-[50%] to-transparent to-[88%]"

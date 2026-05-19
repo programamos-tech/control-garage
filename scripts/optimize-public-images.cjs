@@ -11,15 +11,23 @@ const MANIFEST_PATH = path.join(__dirname, "../lib/image-manifest.json");
 
 /** Presets por tipo de uso en la web */
 const PRESETS = {
-  hero: { maxWidth: 1600, quality: 78 },
-  heroMobile: { maxWidth: 828, quality: 78 },
-  service: { maxWidth: 1200, quality: 80 },
-  gallery: { maxWidth: 800, quality: 78 },
-  carousel: { maxWidth: 560, quality: 82 },
-  brand: { maxWidth: 360, quality: 85 },
+  hero: { maxWidth: 1600, quality: 72 },
+  heroMobile: { maxWidth: 828, quality: 72 },
+  service: { maxWidth: 1200, quality: 74 },
+  gallery: { maxWidth: 800, quality: 70 },
+  carousel: { maxWidth: 560, quality: 76 },
+  brand: { maxWidth: 360, quality: 82 },
   logo: { maxWidth: 480, quality: 88, keepPng: true },
   icon: { maxWidth: 128, quality: 85, keepPng: true },
-  general: { maxWidth: 1400, quality: 80 },
+  general: { maxWidth: 1400, quality: 74 },
+};
+
+/** WebP ya en public/ — re-comprimir sin originales. */
+const WEBP_RECOMPRESS = {
+  "CHI-garage-door-collection.webp": "hero",
+  "hero-mobile-portrait.webp": "heroMobile",
+  "Planks garage doors in black mid-century house.webp": "gallery",
+  "urbanhausdesigns cedar planks IG ONLY 2-Edit-1.webp": "gallery",
 };
 
 /** Archivo (basename) → preset */
@@ -122,6 +130,34 @@ async function optimizeFile(basename) {
   return { from: basename, to: outName, path: publicPath, before, after };
 }
 
+async function recompressWebp(webpName, presetName) {
+  const inputPath = path.join(PUBLIC, webpName);
+  if (!fs.existsSync(inputPath)) {
+    console.warn(`  skip webp (missing): ${webpName}`);
+    return null;
+  }
+
+  const preset = PRESETS[presetName];
+  const before = fs.statSync(inputPath).size;
+  const tempPath = path.join(PUBLIC, `.opt-${webpName}`);
+
+  let pipeline = sharp(inputPath).rotate();
+  const meta = await pipeline.metadata();
+  const w = meta.width ?? preset.maxWidth;
+  if (w > preset.maxWidth) {
+    pipeline = pipeline.resize({ width: preset.maxWidth, withoutEnlargement: true });
+  }
+
+  await pipeline.webp({ quality: preset.quality, effort: 6 }).toFile(tempPath);
+  fs.renameSync(tempPath, inputPath);
+
+  const after = fs.statSync(inputPath).size;
+  console.log(
+    `  ${webpName}  ${formatBytes(before)} → ${formatBytes(after)} (recompress ${presetName})`,
+  );
+  return { before, after };
+}
+
 async function main() {
   const files = Object.keys(FILE_PRESET);
   console.log(`Optimizing ${files.length} images...\n`);
@@ -136,6 +172,15 @@ async function main() {
     manifest[basename] = result.path;
     manifest[result.path] = result.path;
     saved += result.before - result.after;
+  }
+
+  const webpEntries = Object.entries(WEBP_RECOMPRESS);
+  if (webpEntries.length > 0) {
+    console.log(`\nRecompressing ${webpEntries.length} WebP files...\n`);
+    for (const [webpName, presetName] of webpEntries) {
+      const result = await recompressWebp(webpName, presetName);
+      if (result) saved += result.before - result.after;
+    }
   }
 
   fs.writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2));

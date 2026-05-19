@@ -8,6 +8,7 @@ import {
   type ServiceRouteKey,
 } from "@/lib/public-routes";
 import { images } from "@/lib/image-assets";
+import { IMAGE_QUALITY } from "@/lib/image-quality";
 import { SITE, whatsappHref } from "@/lib/site-config";
 import { PageIntro } from "./PageIntro";
 import { ServicesSection } from "./ServicesSection";
@@ -86,7 +87,7 @@ export function MarketingPageContent({ routeKey, locale, dict }: Props) {
                   fill
                   className="object-cover"
                   sizes="(max-width:1024px) 100vw, 50vw"
-                  quality={78}
+                  quality={IMAGE_QUALITY.marketing}
                   priority
                 />
               </div>

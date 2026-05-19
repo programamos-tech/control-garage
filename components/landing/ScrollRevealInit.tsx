@@ -7,12 +7,6 @@ function prefersReducedMotion() {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
-function isInViewport(el: HTMLElement) {
-  const rect = el.getBoundingClientRect();
-  const vh = window.innerHeight || document.documentElement.clientHeight;
-  return rect.top < vh * 0.94 && rect.bottom > 0;
-}
-
 function initScrollReveal() {
   const nodes = document.querySelectorAll<HTMLElement>(
     '[data-reveal]:not([data-reveal-manual])',
@@ -26,11 +20,6 @@ function initScrollReveal() {
     return () => {};
   }
 
-  nodes.forEach((el) => {
-    if (isInViewport(el)) el.classList.add("is-visible");
-  });
-  document.documentElement.classList.add("reveal-ready");
-
   const observer = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {
@@ -40,13 +29,13 @@ function initScrollReveal() {
         observer.unobserve(el);
       }
     },
-    { threshold: 0.05, rootMargin: "0px 0px 10% 0px" },
+    { threshold: 0, rootMargin: "0px 0px 10% 0px" },
   );
 
-  nodes.forEach((el) => {
-    if (!el.classList.contains("is-visible")) {
-      observer.observe(el);
-    }
+  nodes.forEach((el) => observer.observe(el));
+
+  requestAnimationFrame(() => {
+    document.documentElement.classList.add("reveal-ready");
   });
 
   return () => observer.disconnect();

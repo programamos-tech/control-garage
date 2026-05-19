@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { images } from "@/lib/image-assets";
+import { IMAGE_QUALITY } from "@/lib/image-quality";
 
 const INTERVAL_MS = 6000;
 
@@ -37,6 +38,8 @@ export function ChiGalleryRotator({ imageAlt }: Props) {
     return () => window.clearInterval(id);
   }, [respectMotion]);
 
+  const src = CHI_GALLERY_IMAGES[active]!;
+
   return (
     <span
       className="relative block aspect-[21/9] w-full sm:aspect-[2.4/1]"
@@ -48,22 +51,16 @@ export function ChiGalleryRotator({ imageAlt }: Props) {
       }}
     >
       <span className="absolute inset-0 block transition duration-500 ease-out group-hover:scale-[1.02]">
-        {CHI_GALLERY_IMAGES.map((src, i) => (
-          <Image
-            key={src}
-            src={src}
-            alt={i === active ? imageAlt : ""}
-            fill
-            aria-hidden={i !== active}
-            className={`object-cover object-center transition-opacity duration-1000 ease-in-out ${
-              i === active ? "z-[1] opacity-100" : "z-0 opacity-0"
-            }`}
-            sizes="(max-width: 1280px) 100vw, 1152px"
-            quality={78}
-            priority={i === 0}
-            loading={i === 0 ? undefined : "lazy"}
-          />
-        ))}
+        <Image
+          key={src}
+          src={src}
+          alt={imageAlt}
+          fill
+          className="object-cover object-center"
+          sizes="(max-width: 1280px) 100vw, 1152px"
+          quality={IMAGE_QUALITY.gallery}
+          priority={active === 0}
+        />
       </span>
 
       <span

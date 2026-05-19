@@ -34,12 +34,6 @@ function prefersReducedMotion() {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
-function isInViewport(el: HTMLElement) {
-  const rect = el.getBoundingClientRect();
-  const vh = window.innerHeight || document.documentElement.clientHeight;
-  return rect.top < vh * 0.94 && rect.bottom > 0;
-}
-
 /** Entrada animada (hero / intros). Para secciones al scroll usa `data-reveal` + ScrollRevealInit. */
 export function Reveal({
   children,
@@ -69,11 +63,6 @@ export function Reveal({
     const el = ref.current;
     if (!el) return;
 
-    if (isInViewport(el)) {
-      setVisible(true);
-      return;
-    }
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry?.isIntersecting) {
@@ -81,7 +70,7 @@ export function Reveal({
           observer.disconnect();
         }
       },
-      { threshold: 0.05, rootMargin: "0px 0px 10% 0px" },
+      { threshold: 0, rootMargin: "0px 0px 10% 0px" },
     );
 
     observer.observe(el);

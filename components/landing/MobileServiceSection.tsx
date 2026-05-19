@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Dictionary } from "@/lib/dictionaries";
+import { IMAGE_QUALITY } from "@/lib/image-quality";
 import { SITE, whatsappHref } from "@/lib/site-config";
 import { ButtonCta } from "./ButtonCta";
 
@@ -21,7 +22,7 @@ export function MobileServiceSection({ dict }: Props) {
         fill
         className="object-cover object-center"
         sizes="100vw"
-        quality={76}
+        quality={IMAGE_QUALITY.service}
         loading="lazy"
       />
       {/* Continuidad con Contact + mapa; la parte alta queda bien cubierta para el copy */}

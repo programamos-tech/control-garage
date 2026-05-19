@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { Dictionary } from "@/lib/dictionaries";
 import { images } from "@/lib/image-assets";
+import { IMAGE_QUALITY } from "@/lib/image-quality";
 
 type Props = { dict: Dictionary };
 
@@ -156,7 +157,7 @@ export function MotorsCarousel({ dict }: Props) {
                   fill
                   className="object-contain"
                   sizes="(max-width: 640px) 78vw, 320px"
-                  quality={80}
+                  quality={IMAGE_QUALITY.carousel}
                   loading="lazy"
                 />
               </div>

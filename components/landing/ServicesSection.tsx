@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Dictionary, Locale } from "@/lib/dictionaries";
 import { publicPath, serviceRouteKeys, type ServiceRouteKey } from "@/lib/public-routes";
 import { images } from "@/lib/image-assets";
+import { IMAGE_QUALITY } from "@/lib/image-quality";
 import { SITE, whatsappHref } from "@/lib/site-config";
 
 const IDS = ["installation", "repair", "opener"] as const satisfies readonly ServiceRouteKey[];
@@ -47,7 +48,7 @@ export function ServicesSection({ dict, locale, linkToPages, hideHeading }: Prop
                   fill
                   className="object-cover"
                   sizes="(max-width:768px) 100vw, 33vw"
-                  quality={78}
+                  quality={IMAGE_QUALITY.service}
                   loading={i === 0 ? "eager" : "lazy"}
                 />
               </div>

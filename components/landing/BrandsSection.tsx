@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Dictionary } from "@/lib/dictionaries";
 import { images } from "@/lib/image-assets";
+import { IMAGE_QUALITY } from "@/lib/image-quality";
 import { SITE } from "@/lib/site-config";
 import { ChiGalleryRotator } from "./ChiGalleryRotator";
 import { MotorsCarousel } from "./MotorsCarousel";
@@ -60,7 +61,7 @@ export function BrandsSection({ dict }: Props) {
                     fill
                     className="object-contain object-center"
                     sizes="(max-width: 640px) 176px, (max-width: 768px) 208px, 288px"
-                    quality={85}
+                    quality={IMAGE_QUALITY.brand}
                     loading="lazy"
                   />
                 </span>
