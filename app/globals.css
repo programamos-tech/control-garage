@@ -46,7 +46,15 @@ body {
   }
 }
 
-/* —— Entrada suave (scroll / hero). Solo oculta tras hidratar (html.reveal-ready). —— */
+/* —— LCP: hero siempre visible (no depende de JS ni animaciones). —— */
+#hero-heading,
+.hero-lcp-image {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+/* —— Entrada suave (scroll). Solo oculta tras hidratar (html.reveal-ready). —— */
 html.reveal-ready [data-reveal].reveal-fade-up:not(.is-visible) {
   opacity: 0;
   transform: translateY(1.75rem);
@@ -85,9 +93,6 @@ html.reveal-ready [data-reveal].reveal-fade-down.is-visible {
     animation: site-fab-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both;
   }
 
-  .hero-image-in {
-    animation: hero-image-in 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -122,17 +127,6 @@ html.reveal-ready [data-reveal].reveal-fade-down.is-visible {
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
-  }
-}
-
-@keyframes hero-image-in {
-  from {
-    opacity: 0;
-    transform: scale(1.04);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
   }
 }
 

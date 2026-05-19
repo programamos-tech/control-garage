@@ -1,10 +1,10 @@
 import Image from "next/image";
+import { preload } from "react-dom";
 import type { Dictionary, Locale } from "@/lib/dictionaries";
 import { images } from "@/lib/image-assets";
 import { SITE } from "@/lib/site-config";
 import { ButtonCta } from "./ButtonCta";
 import { GoogleMapStar } from "./GoogleMapStars";
-import { Reveal } from "./Reveal";
 
 type Props = { dict: Dictionary; locale: Locale };
 
@@ -25,41 +25,36 @@ export function Hero({ dict, locale }: Props) {
   const alt = heroAlt[locale] ?? heroAlt.en;
   const altMobile = heroAltMobile[locale] ?? heroAltMobile.en;
 
+  preload(images.hero.mobile, { as: "image", fetchPriority: "high" });
+
   return (
     <section
       className="relative z-10 min-h-[min(88vh,840px)] overflow-hidden bg-brand-blue md:min-h-[min(80vh,780px)] lg:min-h-[min(85vh,820px)]"
       aria-labelledby="hero-heading"
     >
-      <Image
+      {/* img nativo en móvil: Lighthouse registra LCP de forma fiable (sin capas de next/image). */}
+      <img
         src={images.hero.mobile}
         alt={altMobile}
-        fill
-        priority
         fetchPriority="high"
-        className="hero-image-in object-cover object-center md:hidden"
-        sizes="100vw"
-        quality={72}
+        decoding="async"
+        width={1080}
+        height={1920}
+        className="hero-lcp-image absolute inset-0 h-full w-full object-cover object-center md:hidden"
       />
       <Image
         src={images.hero.desktop}
         alt={alt}
         fill
-        priority
-        fetchPriority="high"
-        className="hero-image-in hidden object-cover object-bottom md:block"
+        className="hero-lcp-image hidden object-cover object-bottom md:block"
         sizes="100vw"
         quality={75}
       />
-      {/* Degradado azulado: más denso a la izquierda para legibilidad del titular */}
       <div
         className="absolute inset-0 z-[1] bg-gradient-to-r from-brand-blue/68 from-[5%] via-brand-blue/38 via-[50%] to-transparent to-[88%]"
         aria-hidden
       />
-      <Reveal
-        immediate
-        delay={100}
-        className="relative z-30 mx-auto flex max-w-7xl flex-col px-4 pb-12 pt-14 sm:px-6 sm:pb-14 sm:pt-16 lg:px-8 lg:pb-16 lg:pt-24"
-      >
+      <div className="relative z-30 mx-auto flex max-w-7xl flex-col px-4 pb-12 pt-14 sm:px-6 sm:pb-14 sm:pt-16 lg:px-8 lg:pb-16 lg:pt-24">
         <h1
           id="hero-heading"
           className="max-w-3xl whitespace-pre-line text-[1.625rem] font-extrabold leading-[1.15] tracking-tight text-white [text-shadow:0_2px_34px_rgba(0,0,0,0.72),0_1px_3px_rgba(0,0,0,0.58),0_0_48px_rgba(12,39,72,0.42)] min-[380px]:text-3xl sm:text-4xl lg:text-5xl"
@@ -144,7 +139,7 @@ export function Hero({ dict, locale }: Props) {
             <span className="mt-0.5 text-[13px] text-white/70">{dict.hero.facebookMapsCategory}</span>
           </a>
         </div>
-      </Reveal>
+      </div>
     </section>
   );
 }
