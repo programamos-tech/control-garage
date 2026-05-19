@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { images } from "@/lib/image-assets";
 
 type Size = "top" | "nav" | "footer";
 
@@ -28,7 +29,7 @@ const goldSurfaceFilter =
 export function SiteLogo({ size, className = "", priority = false, onGold = false }: Props) {
   return (
     <Image
-      src="/logo_transparent.png"
+      src={images.logo}
       alt="Control Garage FL — Your garage under control"
       width={1600}
       height={1600}
@@ -38,6 +39,7 @@ export function SiteLogo({ size, className = "", priority = false, onGold = fals
           ? "(max-width: 640px) 260px, (max-width: 1024px) 300px, 400px"
           : "(max-width: 640px) 46vw, 260px"
       }
+      quality={85}
       className={`object-contain object-left ${sizeClass[size]} ${onGold ? goldSurfaceFilter : ""} ${className}`}
     />
   );

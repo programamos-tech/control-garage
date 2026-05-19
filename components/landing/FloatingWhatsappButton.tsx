@@ -9,7 +9,7 @@ export function FloatingWhatsappButton({ ariaLabel, whatsappLeadPrefix }: Props)
       href={whatsappHref(undefined, whatsappLeadPrefix)}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-[max(1rem,env(safe-area-inset-bottom,0px))] right-[max(1rem,env(safe-area-inset-right,0px))] z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_4px_14px_rgba(37,211,102,0.45)] transition hover:scale-[1.06] hover:shadow-[0_6px_20px_rgba(37,211,102,0.55)] active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-blue sm:bottom-6 sm:right-6 sm:h-[3.75rem] sm:w-[3.75rem]"
+      className="site-fab-enter fixed bottom-[max(1rem,env(safe-area-inset-bottom,0px))] right-[max(1rem,env(safe-area-inset-right,0px))] z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_4px_14px_rgba(37,211,102,0.45)] transition-[transform,box-shadow] duration-300 hover:scale-[1.06] hover:shadow-[0_6px_20px_rgba(37,211,102,0.55)] active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-blue sm:bottom-6 sm:right-6 sm:h-[3.75rem] sm:w-[3.75rem]"
       aria-label={ariaLabel}
       title="WhatsApp"
     >

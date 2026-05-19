@@ -3,20 +3,9 @@
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { Dictionary } from "@/lib/dictionaries";
+import { images } from "@/lib/image-assets";
 
 type Props = { dict: Dictionary };
-
-/** Imágenes en `public/` — productos LiftMaster / motores / herrajes (orden de presentación). */
-const MOTOR_IMAGES = [
-  "/8500WCAM_hero_1.png",
-  "/2220L_1.png",
-  "/c318e429-37a9-405a-a4c7-62e247dde07b.jpeg",
-  "/a619c699-8107-4def-a102-949359927043.jpeg",
-  "/3b823a0b-03e8-4717-9127-d2456e48141a.jpeg",
-  "/images.jpeg",
-  "/Steel-Nylon-Garage-Door-Roller.jpg",
-  "/d0be8efb889ae45ee1af6de57438630ff1c9d61c9f5f5fc1966843b0f047e1c1__77228.png",
-] as const;
 
 const AUTOPLAY_MS = 4800;
 
@@ -153,7 +142,7 @@ export function MotorsCarousel({ dict }: Props) {
           aria-roledescription="carousel"
           aria-label={b.motorsTitle}
         >
-          {MOTOR_IMAGES.map((src, i) => (
+          {images.motors.map((src, i) => (
             <div
               key={src}
               data-motor-slide
@@ -167,6 +156,8 @@ export function MotorsCarousel({ dict }: Props) {
                   fill
                   className="object-contain"
                   sizes="(max-width: 640px) 78vw, 320px"
+                  quality={80}
+                  loading="lazy"
                 />
               </div>
             </div>

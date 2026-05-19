@@ -2,15 +2,14 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { images } from "@/lib/image-assets";
 
 const INTERVAL_MS = 6000;
 
-/** Fotos de estilos CHI / instalaciones — rotación in situ (sin carrusel con flechas). */
-const CHI_GALLERY_IMAGES = [
-  "/CHI-garage-door-collection.jpg",
-  encodeURI("/Planks garage doors in black mid-century house.jpg"),
-  encodeURI("/urbanhausdesigns cedar planks IG ONLY 2-Edit-1.webp"),
-] as const;
+/** Fotos de estilos CHI — rutas optimizadas (WebP). */
+const CHI_GALLERY_IMAGES = images.chiGallery.map((src) =>
+  src.includes(" ") ? encodeURI(src) : src,
+);
 
 type Props = { imageAlt: string };
 
@@ -60,7 +59,9 @@ export function ChiGalleryRotator({ imageAlt }: Props) {
               i === active ? "z-[1] opacity-100" : "z-0 opacity-0"
             }`}
             sizes="(max-width: 1280px) 100vw, 1152px"
+            quality={78}
             priority={i === 0}
+            loading={i === 0 ? undefined : "lazy"}
           />
         ))}
       </span>

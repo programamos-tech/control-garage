@@ -1,16 +1,12 @@
 import Image from "next/image";
-import type { Dictionary } from "@/lib/dictionaries";
+import type { Dictionary, Locale } from "@/lib/dictionaries";
+import { images } from "@/lib/image-assets";
 import { SITE } from "@/lib/site-config";
 import { ButtonCta } from "./ButtonCta";
 import { GoogleMapStar } from "./GoogleMapStars";
+import { Reveal } from "./Reveal";
 
-type Props = { dict: Dictionary; locale: string };
-
-/** Imagen principal en `public/CHI-garage-door-collection.jpg`. */
-const HERO_IMAGE = "/CHI-garage-door-collection.jpg";
-
-/** Hero vertical móvil (`public/hero-mobile-portrait.png`, export del diseño vertical). */
-const HERO_IMAGE_MOBILE = "/hero-mobile-portrait.png";
+type Props = { dict: Dictionary; locale: Locale };
 
 const heroAlt: Record<string, string> = {
   en: "CHI garage door collection — Control Garage FL, Orlando area",
@@ -35,28 +31,35 @@ export function Hero({ dict, locale }: Props) {
       aria-labelledby="hero-heading"
     >
       <Image
-        src={HERO_IMAGE_MOBILE}
+        src={images.hero.mobile}
         alt={altMobile}
         fill
         priority
-        className="object-cover object-center md:hidden"
+        fetchPriority="high"
+        className="hero-image-in object-cover object-center md:hidden"
         sizes="100vw"
-        quality={75}
+        quality={72}
       />
       <Image
-        src={HERO_IMAGE}
+        src={images.hero.desktop}
         alt={alt}
         fill
-        className="hidden object-cover object-bottom md:block"
+        priority
+        fetchPriority="high"
+        className="hero-image-in hidden object-cover object-bottom md:block"
         sizes="100vw"
-        quality={90}
+        quality={75}
       />
       {/* Degradado azulado: más denso a la izquierda para legibilidad del titular */}
       <div
         className="absolute inset-0 z-[1] bg-gradient-to-r from-brand-blue/68 from-[5%] via-brand-blue/38 via-[50%] to-transparent to-[88%]"
         aria-hidden
       />
-      <div className="relative z-30 mx-auto flex max-w-7xl flex-col px-4 pb-12 pt-14 sm:px-6 sm:pb-14 sm:pt-16 lg:px-8 lg:pb-16 lg:pt-24">
+      <Reveal
+        immediate
+        delay={100}
+        className="relative z-30 mx-auto flex max-w-7xl flex-col px-4 pb-12 pt-14 sm:px-6 sm:pb-14 sm:pt-16 lg:px-8 lg:pb-16 lg:pt-24"
+      >
         <h1
           id="hero-heading"
           className="max-w-3xl whitespace-pre-line text-[1.625rem] font-extrabold leading-[1.15] tracking-tight text-white [text-shadow:0_2px_34px_rgba(0,0,0,0.72),0_1px_3px_rgba(0,0,0,0.58),0_0_48px_rgba(12,39,72,0.42)] min-[380px]:text-3xl sm:text-4xl lg:text-5xl"
@@ -141,8 +144,7 @@ export function Hero({ dict, locale }: Props) {
             <span className="mt-0.5 text-[13px] text-white/70">{dict.hero.facebookMapsCategory}</span>
           </a>
         </div>
-
-      </div>
+      </Reveal>
     </section>
   );
 }

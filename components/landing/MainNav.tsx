@@ -20,7 +20,7 @@ export function MainNav({ dict, locale }: Props) {
             <li key={l.label} className="group relative">
               <Link
                 href={l.href}
-                className="flex items-center gap-1 px-2 py-2.5 text-sm font-bold text-brand-blue hover:text-brand-gold-dark lg:py-3"
+                className="flex items-center gap-1 px-2 py-2.5 text-sm font-bold text-brand-blue transition-colors duration-200 hover:text-brand-gold-dark lg:py-3"
               >
                 {l.label}
                 {l.sub && (

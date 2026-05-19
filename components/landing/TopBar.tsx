@@ -1,10 +1,12 @@
-import type { Dictionary } from "@/lib/dictionaries";
+import Link from "next/link";
+import type { Dictionary, Locale } from "@/lib/dictionaries";
 import { capitalizeFirstLetter } from "@/lib/capitalize-first-letter";
+import { publicPath } from "@/lib/public-routes";
 import { SITE, whatsappHref } from "@/lib/site-config";
 import { ButtonCta } from "./ButtonCta";
 import { SiteLogo } from "./SiteLogo";
 
-type Props = { dict: Dictionary };
+type Props = { dict: Dictionary; locale: Locale };
 
 /** Bisel dorado: vértice inferior derecho hacia el centro. */
 const goldClip = "[clip-path:polygon(0_0,100%_0,92%_100%,0_100%)]";
@@ -18,12 +20,12 @@ function RatedBlock({ text }: { text: string }) {
   );
 }
 
-export function TopBar({ dict }: Props) {
+export function TopBar({ dict, locale }: Props) {
   return (
     <div className="relative z-50 hidden bg-brand-blue text-white lg:block">
       <div className="flex min-h-[3.75rem] items-stretch sm:min-h-[4rem] xl:min-h-[4.25rem]">
-        <a
-          href="#top"
+        <Link
+          href={publicPath(locale, "home")}
           className={`relative flex w-[clamp(13rem,34vw,24rem)] shrink-0 items-center justify-center bg-brand-gold-mid px-4 py-2 sm:px-6 sm:py-2.5 xl:w-[min(26rem,38vw)] ${goldClip} focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-gold-mid`}
         >
           <SiteLogo
@@ -32,7 +34,7 @@ export function TopBar({ dict }: Props) {
             onGold
             className="max-h-[52px] sm:max-h-[60px] xl:max-h-[68px]"
           />
-        </a>
+        </Link>
 
         <div className="flex min-h-0 min-w-0 flex-1 items-stretch">
           <div className="mx-auto flex w-full max-w-7xl items-center gap-3 px-6 py-2 sm:gap-4 sm:py-2 lg:gap-5 lg:px-8 xl:gap-6 xl:py-2.5">

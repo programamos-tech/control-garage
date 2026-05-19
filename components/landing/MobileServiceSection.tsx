@@ -11,7 +11,8 @@ export function MobileServiceSection({ dict }: Props) {
   return (
     <section
       id="mobile-service"
-      className={`relative isolate scroll-mt-24 overflow-hidden ${sectionMinH}`}
+      data-reveal
+      className={`reveal-fade-up relative isolate scroll-mt-24 overflow-hidden ${sectionMinH}`}
       aria-labelledby="mobile-service-title"
     >
       <Image
@@ -20,7 +21,8 @@ export function MobileServiceSection({ dict }: Props) {
         fill
         className="object-cover object-center"
         sizes="100vw"
-        quality={90}
+        quality={76}
+        loading="lazy"
       />
       {/* Continuidad con Contact + mapa; la parte alta queda bien cubierta para el copy */}
       <div

@@ -120,7 +120,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Need garage repair in Orlando or full garage door service? Control Garage FL is the call — clear quotes, the right parts, and honest work. We handle residential garage repair, installs, openers, and overhead door issues across the area; English and Spanish, LiftMaster, Clopay & CHI.",
     },
     hero: {
-      h1: "Garage repair Orlando — Control Garage FL\ngarage doors · install · replace · 24/7",
+      h1: "Garage Door Service & Repair in Orlando, FL\n24/7 · Same day Service",
       sub:
         "Garage repair and garage door repair Orlando are our daily focus — Control Garage FL: new doors, openers, broken springs, off-track doors, and noisy openers, with same-day help when you need it most.",
       cta: "Explore services",
@@ -275,7 +275,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Control Garage FL: la reparación de puertas de garaje en Orlando exige diagnóstico claro, repuestos adecuados y presupuestos justos. Instalación, motores y reparación en toda el área de Orlando — inglés y español, LiftMaster, Clopay y CHI.",
     },
     hero: {
-      h1: "Reparación de puertas de garaje Orlando — Control Garage FL\ninstalación, reemplazo y 24/7",
+      h1: "Servicio y reparación de puertas de garaje en Orlando, FL\n24/7 · Servicio el mismo día",
       sub:
         "Para reparación de puertas de garaje, Orlando y alrededores eligen a Control Garage FL — puertas nuevas, motores, resortes rotos, rieles, motores ruidosos y atención el mismo día cuando hace falta.",
       cta: "Ver servicios",

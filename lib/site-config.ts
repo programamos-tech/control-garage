@@ -35,7 +35,7 @@ export const SITE = {
   mapEmbedUrl:
     "https://www.google.com/maps?q=28.53834,-81.379234&z=10&hl=en&output=embed",
   /** Foto de la camioneta de servicio (`public/`) */
-  serviceVanImage: "/4b89922e-82a5-40c4-8ed5-ce768380c4f0.jpeg",
+  serviceVanImage: "/4b89922e-82a5-40c4-8ed5-ce768380c4f0.webp",
   suppliers: {
     haas: "https://www.haasdoor.com/",
     liftmasterOpeners:

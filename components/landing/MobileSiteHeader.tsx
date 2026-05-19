@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { Dictionary, Locale } from "@/lib/dictionaries";
 import { capitalizeFirstLetter } from "@/lib/capitalize-first-letter";
 import { getMainNavLinks } from "@/lib/nav-links";
+import { publicPath } from "@/lib/public-routes";
 import { SITE, whatsappHref } from "@/lib/site-config";
 import { ButtonCta } from "./ButtonCta";
 import { LanguageSwitcher } from "./LanguageSwitcher";
@@ -25,8 +26,8 @@ export function MobileSiteHeader({ dict, locale }: Props) {
     <header className="sticky top-0 z-50 lg:hidden">
       {/* Franja 1: marca + menú (estilo referencia 1A) */}
       <div className="flex min-h-[4rem] items-stretch overflow-hidden bg-brand-blue shadow-[0_1px_0_rgba(255,255,255,0.06)] sm:min-h-[4.25rem]">
-        <a
-          href="#top"
+        <Link
+          href={publicPath(locale, "home")}
           className={`relative flex w-[min(54vw,16.5rem)] max-w-[280px] shrink-0 items-center justify-center bg-brand-gold-mid px-3 py-2.5 sm:w-[min(48vw,18rem)] sm:py-3 ${goldClip} focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40`}
         >
           <SiteLogo
@@ -35,7 +36,7 @@ export function MobileSiteHeader({ dict, locale }: Props) {
             onGold
             className="!h-12 !max-h-12 max-w-[min(200px,50vw)] sm:!h-14 sm:!max-h-14 sm:max-w-[min(220px,46vw)]"
           />
-        </a>
+        </Link>
         <div className="flex min-w-0 flex-1 items-center justify-end gap-1.5 pr-2 sm:gap-2 sm:pr-3">
           <div className="shrink-0">
             <LanguageSwitcher locale={locale} size="navBar" />

@@ -1,5 +1,9 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import type { Locale } from "@/lib/dictionaries";
+import { alternateLocalePath } from "@/lib/public-routes";
 
 type Size = "compact" | "default" | "navBar";
 
@@ -15,7 +19,11 @@ export function LanguageSwitcher({
   onLight?: boolean;
   size?: Size;
 }) {
+  const pathname = usePathname();
   const size: Size = sizeProp ?? (dense ? "compact" : "default");
+  const otherLocale: Locale = locale === "en" ? "es" : "en";
+  const enHref = locale === "en" ? pathname : alternateLocalePath(pathname, "en");
+  const esHref = locale === "es" ? pathname : alternateLocalePath(pathname, "es");
 
   const shell =
     size === "navBar"
@@ -69,7 +77,7 @@ export function LanguageSwitcher({
   return (
     <div className={`flex items-center ${shellSize} ${shell}`} aria-label="Language">
       <Link
-        href="/en"
+        href={enHref}
         className={linkClass(locale === "en")}
         hrefLang="en"
         title="English"
@@ -78,7 +86,7 @@ export function LanguageSwitcher({
         EN
       </Link>
       <Link
-        href="/es"
+        href={esHref}
         className={linkClass(locale === "es")}
         hrefLang="es"
         title="Español"

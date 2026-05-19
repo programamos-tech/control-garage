@@ -11,7 +11,8 @@
     "logo:transparent-bg": "node scripts/logo-transparent-dark-bg.cjs",
     "logo:recolor": "node scripts/recolor-logo-brand.cjs",
     "logo:build": "node scripts/make-logo-transparent-png.cjs && node scripts/recolor-logo-brand.cjs",
-    "favicon:build": "node scripts/build-favicon.cjs"
+    "favicon:build": "node scripts/build-favicon.cjs",
+    "images:optimize": "node scripts/optimize-public-images.cjs"
   },
   "dependencies": {
     "next": "16.2.1",

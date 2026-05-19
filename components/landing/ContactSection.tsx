@@ -7,7 +7,8 @@ export function ContactSection({ dict }: Props) {
   return (
     <section
       id="contact"
-      className="scroll-mt-24 bg-brand-blue pb-14 pt-12 text-white sm:pb-16 sm:pt-14"
+      data-reveal
+      className="reveal-fade-up scroll-mt-24 bg-brand-blue pb-14 pt-12 text-white sm:pb-16 sm:pt-14"
       aria-labelledby="contact-sr-title"
     >
       <h2 id="contact-sr-title" className="sr-only">

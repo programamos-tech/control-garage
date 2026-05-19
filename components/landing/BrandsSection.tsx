@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Dictionary } from "@/lib/dictionaries";
+import { images } from "@/lib/image-assets";
 import { SITE } from "@/lib/site-config";
 import { ChiGalleryRotator } from "./ChiGalleryRotator";
 import { MotorsCarousel } from "./MotorsCarousel";
@@ -9,17 +10,17 @@ type Props = { dict: Dictionary };
 const BRAND_LOGOS = [
   {
     name: "LiftMaster",
-    src: "/Liftmaster-Logo.png",
+    src: images.brands.liftmaster,
     href: SITE.suppliers.liftmaster,
   },
   {
     name: "Clopay",
-    src: "/clopay-corporation-logo-810x450.webp",
+    src: images.brands.clopay,
     href: SITE.suppliers.clopay,
   },
   {
     name: "C.H.I. Overhead Doors",
-    src: "/CHI-ColorLogo-removebg-preview.png",
+    src: images.brands.chi,
     href: SITE.suppliers.chiResidentialCollections,
   },
 ] as const;
@@ -28,7 +29,8 @@ export function BrandsSection({ dict }: Props) {
   return (
     <section
       id="brands"
-      className="scroll-mt-24 border-y border-slate-200/80 bg-white py-14 sm:py-20"
+      data-reveal
+      className="reveal-fade-up scroll-mt-24 border-y border-slate-200/80 bg-white py-14 sm:py-20"
       aria-labelledby="brands-title"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -58,6 +60,8 @@ export function BrandsSection({ dict }: Props) {
                     fill
                     className="object-contain object-center"
                     sizes="(max-width: 640px) 176px, (max-width: 768px) 208px, 288px"
+                    quality={85}
+                    loading="lazy"
                   />
                 </span>
               </a>

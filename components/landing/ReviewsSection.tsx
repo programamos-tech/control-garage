@@ -1,32 +1,35 @@
 import Image from "next/image";
 import type { Dictionary } from "@/lib/dictionaries";
+import { images } from "@/lib/image-assets";
 import { SITE } from "@/lib/site-config";
 import { GoogleMapStar } from "./GoogleMapStars";
 
-type Props = { dict: Dictionary };
-
-const GOOGLE_LOGO = "/google_maps_pin_PNG26.png";
-const FACEBOOK_LOGO = "/Facebook_f_logo_(2019).svg.png";
+type Props = { dict: Dictionary; hideHeading?: boolean };
 
 /** Más acotado que antes para alinearse visualmente con la fila de marcas (logos horizontales). */
 const starMd = "h-5 w-5 sm:h-5 md:h-6 md:w-6";
 
-export function ReviewsSection({ dict }: Props) {
+export function ReviewsSection({ dict, hideHeading }: Props) {
   return (
     <section
       id="reviews"
-      className="scroll-mt-24 bg-brand-blue py-16 text-white sm:py-20"
-      aria-labelledby="reviews-title"
+      data-reveal
+      className="reveal-fade-up scroll-mt-24 bg-brand-blue py-16 text-white sm:py-20"
+      aria-labelledby={hideHeading ? undefined : "reviews-title"}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 id="reviews-title" className="text-3xl font-extrabold sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
-          {dict.reviews.title}
-        </h2>
-        <p className="mt-4 max-w-3xl text-base leading-relaxed text-white/90 sm:text-lg">
-          {dict.reviews.sub}
-        </p>
+        {!hideHeading && (
+          <>
+            <h2 id="reviews-title" className="text-3xl font-extrabold sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
+              {dict.reviews.title}
+            </h2>
+            <p className="mt-4 max-w-3xl text-base leading-relaxed text-white/90 sm:text-lg">
+              {dict.reviews.sub}
+            </p>
+          </>
+        )}
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 md:gap-8 lg:mt-14">
+        <div className={`grid gap-6 md:grid-cols-2 md:gap-8 ${hideHeading ? "mt-0" : "mt-12 lg:mt-14"}`}>
           <a
             href={SITE.googleReviewsUrl}
             target="_blank"
@@ -36,7 +39,7 @@ export function ReviewsSection({ dict }: Props) {
           >
             <span className="relative h-[4.25rem] w-[4.25rem] shrink-0 sm:h-[4.75rem] sm:w-[4.75rem] md:h-20 md:w-20">
               <Image
-                src={GOOGLE_LOGO}
+                src={images.reviews.google}
                 alt=""
                 fill
                 className="object-contain drop-shadow-md"
@@ -76,7 +79,7 @@ export function ReviewsSection({ dict }: Props) {
           >
             <span className="relative h-[4.25rem] w-[4.25rem] shrink-0 sm:h-[4.75rem] sm:w-[4.75rem] md:h-20 md:w-20">
               <Image
-                src={FACEBOOK_LOGO}
+                src={images.reviews.facebook}
                 alt=""
                 fill
                 className="object-contain drop-shadow-md"
