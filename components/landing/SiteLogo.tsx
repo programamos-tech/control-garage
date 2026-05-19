@@ -32,8 +32,8 @@ export function SiteLogo({ size, className = "", priority = false, onGold = fals
     <Image
       src={images.logo}
       alt="Control Garage FL — Your garage under control"
-      width={1600}
-      height={1600}
+      width={480}
+      height={480}
       priority={priority}
       sizes={
         size === "footer"
