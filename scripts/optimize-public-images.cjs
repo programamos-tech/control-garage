@@ -158,11 +158,20 @@ async function recompressWebp(webpName, presetName) {
   return { before, after };
 }
 
+function loadExistingManifest() {
+  if (!fs.existsSync(MANIFEST_PATH)) return {};
+  try {
+    return JSON.parse(fs.readFileSync(MANIFEST_PATH, "utf8"));
+  } catch {
+    return {};
+  }
+}
+
 async function main() {
   const files = Object.keys(FILE_PRESET);
   console.log(`Optimizing ${files.length} images...\n`);
 
-  const manifest = {};
+  const manifest = loadExistingManifest();
   let saved = 0;
 
   for (const basename of files) {
@@ -183,7 +192,11 @@ async function main() {
     }
   }
 
-  fs.writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2));
+  // Conservar entradas previas si no había originales que procesar (evita romper rutas .jpg → .webp).
+  fs.writeFileSync(
+    MANIFEST_PATH,
+    JSON.stringify(manifest, null, 2) + "\n",
+  );
   console.log(`\nManifest: lib/image-manifest.json`);
   console.log(`Estimated savings vs originals processed: ~${formatBytes(saved)}`);
 

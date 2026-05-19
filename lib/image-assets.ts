@@ -4,11 +4,13 @@
  */
 import manifest from "./image-manifest.json";
 
-/** Resuelve ruta pública optimizada; si no hay entrada en manifest, devuelve la original. */
+/** Resuelve ruta pública optimizada; si no hay entrada en manifest, prueba .webp o la original. */
 export function img(src: string): string {
   const key = src.startsWith("/") ? src.slice(1) : src;
   const mapped = (manifest as Record<string, string>)[key];
   if (mapped) return mapped.startsWith("/") ? mapped : `/${mapped}`;
+  const webpFallback = key.replace(/\.(jpe?g|png)$/i, ".webp");
+  if (webpFallback !== key) return `/${webpFallback}`;
   return src.startsWith("/") ? src : `/${src}`;
 }
 
