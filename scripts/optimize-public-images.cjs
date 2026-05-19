@@ -28,6 +28,9 @@ const WEBP_RECOMPRESS = {
   "hero-mobile-portrait.webp": "heroMobile",
   "Planks garage doors in black mid-century house.webp": "gallery",
   "urbanhausdesigns cedar planks IG ONLY 2-Edit-1.webp": "gallery",
+  "service-installation.webp": "service",
+  "service-repair.webp": "service",
+  "service-opener.webp": "service",
 };
 
 /** Archivo (basename) → preset */
@@ -37,6 +40,9 @@ const FILE_PRESET = {
   "male-with-red-shirt-making-window-with-industrial-tools.jpg": "service",
   "low-angle-people-working-with-drill.jpg": "service",
   "electrician-is-mounting-electric-sockets-white-wall-indoors.jpg": "service",
+  "service-installation.webp": "service",
+  "service-repair.webp": "service",
+  "service-opener.webp": "service",
   "4b89922e-82a5-40c4-8ed5-ce768380c4f0.jpeg": "service",
   "logo_transparent.png": "logo",
   "Liftmaster-Logo.png": "brand",

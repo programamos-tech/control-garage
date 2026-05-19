@@ -20,9 +20,9 @@ export const images = {
     mobile: img("/hero-mobile-portrait.png"),
   },
   services: [
-    img("/male-with-red-shirt-making-window-with-industrial-tools.jpg"),
-    img("/low-angle-people-working-with-drill.jpg"),
-    img("/electrician-is-mounting-electric-sockets-white-wall-indoors.jpg"),
+    "/service-installation.webp",
+    "/service-repair.webp",
+    "/service-opener.webp",
   ],
   logo: img("/logo_transparent.png"),
   serviceVan: img("/4b89922e-82a5-40c4-8ed5-ce768380c4f0.jpeg"),
