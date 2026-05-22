@@ -122,7 +122,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     hero: {
       h1: "Garage Door Service & Repair in Orlando, FL\n24/7 · Same day Service",
       sub:
-        "Garage repair and garage door repair Orlando are our daily focus — Control Garage FL: new doors, openers, broken springs, off-track doors, and noisy openers, with same-day help when you need it most.",
+        "Control Garage FL provides fast and reliable garage door repair in Orlando and Kissimmee, from broken springs and noisy openers to complete door installations.",
       cta: "Explore services",
       googleMapsCategory: "Garage door supplier",
       googleMapsLinkAria:
@@ -277,7 +277,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     hero: {
       h1: "Servicio y reparación de puertas de garaje en Orlando, FL\n24/7 · Servicio el mismo día",
       sub:
-        "Para reparación de puertas de garaje, Orlando y alrededores eligen a Control Garage FL — puertas nuevas, motores, resortes rotos, rieles, motores ruidosos y atención el mismo día cuando hace falta.",
+        "Control Garage FL ofrece reparación de puertas de garaje rápida y confiable en Orlando y Kissimmee, desde resortes rotos y motores ruidosos hasta instalaciones completas.",
       cta: "Ver servicios",
       googleMapsCategory: "Proveedor de puertas de garaje",
       googleMapsLinkAria:
