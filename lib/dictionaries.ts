@@ -120,7 +120,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Need garage repair in Orlando or full garage door service? Control Garage FL is the call — clear quotes, the right parts, and honest work. We handle residential garage repair, installs, openers, and overhead door issues across the area; English and Spanish, LiftMaster, Clopay & CHI.",
     },
     hero: {
-      h1: "Garage Door Service & Repair in Orlando, FL\n24/7 · Same day Service",
+      h1: "Garage Door Service & Repair in Orlando, FL\n24/7 · Same Day Service",
       sub:
         "Control Garage FL provides fast and reliable garage door repair in Orlando and Kissimmee, from broken springs and noisy openers to complete door installations.",
       cta: "Explore services",
